@@ -1,0 +1,66 @@
+{
+  "id": 73149,
+  "type": "WQ",
+  "titleTextMapHash": 2281514367,
+  "descTextMapHash": 2916448286,
+  "luaPath": "Actor/Quest/WQ73149",
+  "showType": "QUEST_HIDDEN",
+  "subQuests": [
+    {
+      "subId": 7314901,
+      "mainId": 73149,
+      "order": 1,
+      "descTextMapHash": 2275922380,
+      "failCondComb": "QUEST_HIDDEN",
+      "acceptCondComb": "LOGIC_NONE",
+      "finishCondComb": "LOGIC_NONE",
+      "failParentShow": "QUEST_HIDDEN",
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [7306806, 3]
+        }
+      ],
+      "finishCond": [
+        {
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "paramString": "73149_SeedingCompleted",
+          "count": 1
+        }
+      ],
+      "failCond": [],
+      "beginExec": [],
+      "finishExec": [],
+      "failExec": [],
+      "guide": {}
+    },
+    {
+      "subId": 7314902,
+      "mainId": 73149,
+      "order": 2,
+      "descTextMapHash": 1338066244,
+      "failCondComb": "QUEST_HIDDEN",
+      "acceptCondComb": "LOGIC_NONE",
+      "finishCondComb": "LOGIC_NONE",
+      "failParentShow": "QUEST_HIDDEN",
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [7314901, 3]
+        }
+      ],
+      "finishCond": [
+        {
+          "type": "QUEST_CONTENT_TIME_VAR_PASS_DAY",
+          "param": [73149, 1],
+          "paramString": "1"
+        }
+      ],
+      "failCond": [],
+      "beginExec": [],
+      "finishExec": [],
+      "failExec": [],
+      "guide": {}
+    }
+  ]
+}

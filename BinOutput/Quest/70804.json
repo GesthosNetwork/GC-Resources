@@ -1,0 +1,39 @@
+{
+  "id": 70804,
+  "type": "WQ",
+  "titleTextMapHash": 1385796447,
+  "descTextMapHash": 3427090070,
+  "luaPath": "",
+  "showType": "QUEST_HIDDEN",
+  "subQuests": [
+    {
+      "subId": 7080401,
+      "mainId": 70804,
+      "order": 1,
+      "descTextMapHash": 2547869700,
+      "failCondComb": "QUEST_HIDDEN",
+      "acceptCondComb": "LOGIC_NONE",
+      "finishCondComb": "LOGIC_NONE",
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [7012305, 3]
+        },
+        {
+          "type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+          "param": [40029]
+        },
+        {
+          "type": "QUEST_COND_ACTIVITY_END",
+          "param": [2009001]
+        }
+      ],
+      "finishCond": [],
+      "failCond": [],
+      "beginExec": [],
+      "finishExec": [],
+      "failExec": [],
+      "guide": {}
+    }
+  ]
+}
