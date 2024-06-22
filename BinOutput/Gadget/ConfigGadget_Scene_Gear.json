@@ -1,0 +1,445 @@
+{
+  "Gear_ElectricBall": {
+    "$type": "ConfigGadget",
+    "common": {
+      "effectAttachShape": {
+        "$type": "ConfigEffectAttachBox",
+        "scaleZ": 0.4000000059604645
+      }
+    },
+    "combat": {
+      "property": {
+        "useCreatorProperty": true,
+        "HP": 999999.0,
+        "attack": 10.0,
+        "defense": 999999.0
+      },
+      "beHit": {
+        "hitBloodEffect": "",
+        "hitAutoRedirect": false,
+        "muteAllHit": true,
+        "muteAllHitEffect": true,
+        "muteAllHitText": true
+      },
+      "animEvents": {
+        "ATK01": {
+          "attackPattern": {
+            "$type": "ConfigAttackBox",
+            "triggerType": "TriggerNoRepeat",
+            "born": {
+              "$type": "GJGFFJAGIDF"
+            },
+            "size": {
+              "x": 0.4000000059604645,
+              "y": 0.4000000059604645,
+              "z": 1.0
+            }
+          },
+          "attackInfo": {
+            "attackTag": "",
+            "attenuationTag": "",
+            "attenuationGroup": "default",
+            "attackProperty": {
+              "MFOOCADHKLC": 0.5,
+              "MKLAMNDEDGB": 0.0,
+              "elementType": "Electric",
+              "bonusCriticalHurt": 50.0
+            },
+            "hitPattern": {
+              "onHitEffectName": "default",
+              "hitImpulseType": "LV2",
+              "overrideHitImpulse": {
+                "hitLevel": "Light",
+                "hitImpulseX": 120.0,
+                "hitImpulseY": 0.0
+              },
+              "hitHaltTime": 0.11999999731779099,
+              "hitHaltTimeScale": 0.009999999776482582
+            }
+          }
+        }
+      }
+    },
+    "attackAttenuation": "",
+    "abilities": [
+      {
+        "abilityID": "Gear_ElectricBall",
+        "abilityName": "Gear_Electric_ElectricBall_Loop",
+        "abilityOverride": ""
+      }
+    ],
+    "timer": {
+      "lifeTime": 2.5
+    },
+    "move": {
+      "$type": "ConfigLinerBulletMove",
+      "speed": 15.0,
+      "updateAngle": {
+        "$type": "ConfigBulletMoveAngleByVelocity"
+      }
+    },
+    "gadget": {
+      "$type": "ConfigBulletPattern",
+      "collision": {
+        "targetType": "Enemy"
+      },
+      "triggerActions": [
+        {
+          "$type": "ConfigGadgetDoAttackEvent",
+          "attackEvent": "ATK01"
+        }
+      ]
+    }
+  },
+  "Test_Rotation02": {
+    "$type": "ConfigGadget",
+    "common": {
+      "effectAttachShape": {
+        "$type": "ALFLMMICBCO",
+        "DNLFPADLHHP": "EffectMesh"
+      },
+      "affectedByWorld": true
+    },
+    "hasModel": true,
+    "combat": {
+      "property": {
+        "HP": 99999.0,
+        "attack": 10.0,
+        "isLockHP": true,
+        "canTriggerBullet": true,
+        "OEPGABDDCHI": true
+      },
+      "beHit": {
+        "hitBloodEffect": "",
+        "hitAutoRedirect": false,
+        "muteAllHitText": true
+      },
+      "combatLock": {
+        "lockShape": "CircleLockEnemy",
+        "lockType": "Gadget_Lv1"
+      },
+      "die": {
+        "dieForceDisappearTime": 3.0,
+        "dieDisappearEffect": ""
+      }
+    },
+    "attackAttenuation": "",
+    "abilities": [
+      {
+        "abilityID": "Ability_01",
+        "abilityName": "Test_Rotation02_Interact",
+        "abilityOverride": ""
+      }
+    ]
+  },
+  "SceneObj_Area_Common_Property_Prop_GCGInviteBoard_01": {
+    "$type": "ConfigGadget",
+    "hasModel": true,
+    "combat": {
+      "property": {
+        "HP": 99999.0,
+        "attack": 20.0,
+        "weight": 50.0,
+        "isLockHP": true,
+        "canTriggerBullet": true,
+        "denyElementStick": true,
+        "MKJAALCBCHG": true
+      },
+      "beHit": {
+        "hitBloodEffect": "",
+        "hitAutoRedirect": false,
+        "muteAllHitText": true
+      },
+      "combatLock": {
+        "lockShape": "CircleLockEnemy",
+        "denyLockOn": true,
+        "lockType": "Gadget_Lv1"
+      }
+    },
+    "attackAttenuation": "",
+    "HDMNJBJPNHP": {
+      "HMPMMCCGOLJ": "UI/open_gcg_invite_page",
+      "LKBDFMKIHMA": "UI_GCG_INTEE_WHITE",
+      "MHFLBHECJHI": "LOGIC_NOT",
+      "CJHECJJBMJA": ["GCG_CHAR_CHALLENGE_NEW"],
+      "icon": "",
+      "MJAFOAGMHDM": "",
+      "ACGIMEJFHFP": "",
+      "LDEAEFGKKGP": "",
+      "BFILJOAHEHD": false,
+      "BCCFNNKLHEF": [
+        {
+          "HMPMMCCGOLJ": "UI/open_gcg_invite_page",
+          "LKBDFMKIHMA": "UI_GCG_INTEE_YELLOW",
+          "MHFLBHECJHI": "LOGIC_AND",
+          "CJHECJJBMJA": ["GCG_CHAR_CHALLENGE_NEW"],
+          "icon": "",
+          "MJAFOAGMHDM": "",
+          "ACGIMEJFHFP": "",
+          "LDEAEFGKKGP": "",
+          "CNGLFJAADFN": 2
+        },
+        {
+          "HMPMMCCGOLJ": "UI/open_gcg_pvp_page",
+          "LKBDFMKIHMA": "UI_GCG_MATCH_OPTION",
+          "icon": "",
+          "MJAFOAGMHDM": "",
+          "ACGIMEJFHFP": "",
+          "LDEAEFGKKGP": "",
+          "CNGLFJAADFN": 3
+        },
+        {
+          "HMPMMCCGOLJ": "UI/open_gcg_specialmatch_page",
+          "LKBDFMKIHMA": "UI_GCG_FESTIVAL_ENTER",
+          "MHFLBHECJHI": "LOGIC_AND",
+          "CJHECJJBMJA": ["GCG_FESTIVAL_OPEN"],
+          "icon": "",
+          "MJAFOAGMHDM": "",
+          "ACGIMEJFHFP": "",
+          "LDEAEFGKKGP": "",
+          "CNGLFJAADFN": 4
+        },
+        {
+          "HMPMMCCGOLJ": "UI/open_gcg_specialmatch_page",
+          "LKBDFMKIHMA": "UI_GCG_FESTIVAL_ENTER_YELLOW",
+          "MHFLBHECJHI": "LOGIC_AND",
+          "CJHECJJBMJA": ["GCG_FESTIVAL_ENTRY_NEW"],
+          "icon": "",
+          "MJAFOAGMHDM": "",
+          "ACGIMEJFHFP": "",
+          "LDEAEFGKKGP": "",
+          "CNGLFJAADFN": 5
+        },
+        {
+          "HMPMMCCGOLJ": "UI/open_gcg_arena_page",
+          "LKBDFMKIHMA": "UI_GCG_ARENA_ENTERTITLE",
+          "MHFLBHECJHI": "LOGIC_AND",
+          "CJHECJJBMJA": ["GCG_ARENA_ENTRY_OPEN"],
+          "icon": "",
+          "MJAFOAGMHDM": "",
+          "ACGIMEJFHFP": "",
+          "LDEAEFGKKGP": "",
+          "CNGLFJAADFN": 6
+        },
+        {
+          "HMPMMCCGOLJ": "UI/open_gcg_arena_page",
+          "LKBDFMKIHMA": "UI_GCG_ARENA_ENTERTITLE_YELLOW",
+          "MHFLBHECJHI": "LOGIC_AND",
+          "CJHECJJBMJA": ["GCG_ARENA_ENTRY_NEW"],
+          "icon": "",
+          "MJAFOAGMHDM": "",
+          "ACGIMEJFHFP": "",
+          "LDEAEFGKKGP": "",
+          "CNGLFJAADFN": 7
+        }
+      ]
+    },
+    "misc": {
+      "GKCEMAKIKPH": "",
+      "NOGMLCKJDHK": true,
+      "GPJNJMNKFKB": true
+    },
+    "MFHCAPAMCJE": {
+      "JOAPLIENDFL": [
+        {
+          "$type": "FJJICENDNIO",
+          "MHLGAOOHHGE": "GearStop"
+        },
+        {
+          "$type": "FJJICENDNIO",
+          "MHLGAOOHHGE": "GearStart",
+          "enable": true
+        },
+        {
+          "$type": "FJJICENDNIO",
+          "enable": true
+        }
+      ]
+    },
+    "billboard": {
+      "$type": "NCBABGPMMPL",
+      "EBBHBMFMOGD": "BillboardAttach",
+      "offset": {
+        "y": 2.0
+      }
+    },
+    "IPBFOKBDDOD": {
+      "PMDLGGFEKPF": 2.0,
+      "MFHLOJBNJID": {
+        "y": -2.0
+      }
+    }
+  },
+  "SceneObj_Area_Common_Property_Prop_GCGInviteBoard_02": {
+    "$type": "ConfigGadget",
+    "hasModel": true,
+    "combat": {
+      "property": {
+        "HP": 99999.0,
+        "attack": 20.0,
+        "weight": 50.0,
+        "isLockHP": true,
+        "canTriggerBullet": true,
+        "denyElementStick": true,
+        "MKJAALCBCHG": true
+      },
+      "beHit": {
+        "hitBloodEffect": "",
+        "hitAutoRedirect": false,
+        "muteAllHitText": true
+      },
+      "combatLock": {
+        "lockShape": "CircleLockEnemy",
+        "denyLockOn": true,
+        "lockType": "Gadget_Lv1"
+      }
+    },
+    "attackAttenuation": "",
+    "HDMNJBJPNHP": {
+      "HMPMMCCGOLJ": "UI/open_gcg_invite_page",
+      "LKBDFMKIHMA": "UI_GCG_INTEE_WHITE",
+      "MHFLBHECJHI": "LOGIC_NOT",
+      "CJHECJJBMJA": ["GCG_CHAR_CHALLENGE_NEW"],
+      "icon": "",
+      "MJAFOAGMHDM": "",
+      "ACGIMEJFHFP": "",
+      "LDEAEFGKKGP": "",
+      "BFILJOAHEHD": false,
+      "BCCFNNKLHEF": [
+        {
+          "HMPMMCCGOLJ": "UI/open_gcg_invite_page",
+          "LKBDFMKIHMA": "UI_GCG_INTEE_YELLOW",
+          "MHFLBHECJHI": "LOGIC_AND",
+          "CJHECJJBMJA": ["GCG_CHAR_CHALLENGE_NEW"],
+          "icon": "",
+          "MJAFOAGMHDM": "",
+          "ACGIMEJFHFP": "",
+          "LDEAEFGKKGP": "",
+          "CNGLFJAADFN": 2
+        }
+      ]
+    },
+    "misc": {
+      "GKCEMAKIKPH": "",
+      "NOGMLCKJDHK": true,
+      "GPJNJMNKFKB": true
+    },
+    "MFHCAPAMCJE": {
+      "JOAPLIENDFL": [
+        {
+          "$type": "FJJICENDNIO",
+          "MHLGAOOHHGE": "GearStop"
+        },
+        {
+          "$type": "FJJICENDNIO",
+          "MHLGAOOHHGE": "GearStart",
+          "enable": true
+        },
+        {
+          "$type": "FJJICENDNIO",
+          "enable": true
+        }
+      ]
+    },
+    "billboard": {
+      "$type": "NCBABGPMMPL",
+      "EBBHBMFMOGD": "BillboardAttach",
+      "offset": {
+        "y": 2.0
+      }
+    },
+    "IPBFOKBDDOD": {
+      "PMDLGGFEKPF": 2.0,
+      "MFHLOJBNJID": {
+        "y": -2.0
+      }
+    }
+  },
+  "WindDevice01": {
+    "$type": "ConfigGadget",
+    "combat": {
+      "property": {
+        "HP": 99999.0,
+        "attack": 20.0,
+        "weight": 50.0,
+        "isInvincible": true,
+        "isLockHP": true
+      },
+      "beHit": {
+        "hitBloodEffect": "",
+        "hitAutoRedirect": false,
+        "muteAllHitText": true
+      },
+      "combatLock": {
+        "lockShape": "CircleLockEnemy",
+        "denyLockOn": true,
+        "lockType": "Gadget_Lv1"
+      }
+    },
+    "attackAttenuation": "",
+    "abilities": [
+      {
+        "abilityID": "Ability_01",
+        "abilityName": "WindDevice01_Interact",
+        "abilityOverride": ""
+      }
+    ],
+    "stateLayers": {
+      "defaultLayer": {
+        "$type": "ConfigNormalStateLayer",
+        "FNPGDAEJAPJ": "",
+        "stateIDs": {
+          "All": {
+            "$type": "ConfigNormalStateIDInfo",
+            "animatorStates": {
+              "WindDevice_On": ["Audio_SceneObj_Gear_WindDevice_On"],
+              "WindDevice_Off": []
+            }
+          }
+        }
+      }
+    }
+  },
+  "SceneObj_Gear_WhiteBox_Weight": {
+    "$type": "ConfigGadget",
+    "combat": {
+      "property": {
+        "HP": 1.0,
+        "attack": 80.0,
+        "weight": 80.0,
+        "isLockHP": true
+      },
+      "beHit": {
+        "hitBloodEffect": "",
+        "hitAutoRedirect": false,
+        "muteAllHit": true,
+        "muteAllHitEffect": true,
+        "muteAllHitText": true
+      },
+      "combatLock": {
+        "lockShape": "CircleLockEnemy",
+        "denyLockOn": true,
+        "lockType": "Gadget_Lv1"
+      }
+    },
+    "attackAttenuation": "",
+    "abilities": [
+      {
+        "abilityID": "SceneObj_Gear_WhiteBox_Weight",
+        "abilityName": "SceneObj_Gear_WhiteBox_Weight",
+        "abilityOverride": ""
+      }
+    ],
+    "field": {
+      "concernType": "CombatExcludeGWGO",
+      "shape": "",
+      "DEOHMEELJDM": "",
+      "triggerInfinite": true,
+      "lifeInfinite": true,
+      "overwriteCampType": true,
+      "campType": "All",
+      "INKADPFABPA": "",
+      "AAHHPDHLLLH": ""
+    }
+  }
+}

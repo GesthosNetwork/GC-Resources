@@ -1,0 +1,4384 @@
+[
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "SceneObj_Area_Common_Property_Prop_BrickWall_01",
+      "abilityMixins": [
+        {
+          "$type": "DoActionOnGlobalValueChangeMixin",
+          "globalValueKey": "GV_BrickWall_Counter",
+          "actions": [
+            {
+              "$type": "ApplyModifier",
+              "modifierName": "BrickWall_DelaySLC"
+            }
+          ]
+        },
+        {
+          "$type": "DoActionOnGlobalValueChangeMixin",
+          "globalValueKey": "SGV_BrickWall_Report",
+          "actions": [
+            {
+              "$type": "ApplyModifier",
+              "modifierName": "BrickWall_ReportSLC"
+            }
+          ]
+        },
+        {
+          "$type": "DisableCineMachineMixin"
+        }
+      ],
+      "abilitySpecials": {
+        "BirckWall_StaminaRecover": 300.0,
+        "BrickWall_Counter": 0.0,
+        "BrickWall_BuffTime": 10.0,
+        "BrickWall_HP_Normal": 130.0,
+        "BrickWall_HP_Stamina": 200.0,
+        "BrickWall_HP_Line": 500.0,
+        "BrickWall_HP_All": 1200.0,
+        "BrickWall_Counter_Normal": 0.0,
+        "BrickWall_Counter_Stamina": 0.0,
+        "BrickWall_Counter_Line": 0.0,
+        "BrickWall_Counter_All": 0.0
+      },
+      "modifiers": {
+        "BrickWall_ReportSLC": {
+          "modifierName": "",
+          "duration": 1.0,
+          "bonusCriticalHurt": 100.0,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValueToOverrideMap",
+              "globalValueKey": "GV_BrickWall_Counter_Normal",
+              "overrideMapKey": "BrickWall_Counter_Normal"
+            },
+            {
+              "$type": "SetGlobalValueToOverrideMap",
+              "globalValueKey": "GV_BrickWall_Counter_Stamina",
+              "overrideMapKey": "BrickWall_Counter_Stamina"
+            },
+            {
+              "$type": "SetGlobalValueToOverrideMap",
+              "globalValueKey": "GV_BrickWall_Counter_Line",
+              "overrideMapKey": "BrickWall_Counter_Line"
+            },
+            {
+              "$type": "SetGlobalValueToOverrideMap",
+              "globalValueKey": "GV_BrickWall_Counter_All",
+              "overrideMapKey": "BrickWall_Counter_All"
+            },
+            {
+              "$type": "ServerLuaCall",
+              "luaCallType": "FromGroup",
+              "funcName": "SLC_CharAmusePillar_Report_UnNormal",
+              "LIAAKLHNPEN": 3,
+              "MPPMFEDKGHC": "BrickWall_Counter_Stamina",
+              "BOKNHLDBKKK": "BrickWall_Counter_Line",
+              "CHOIIMHDNHK": "BrickWall_Counter_All"
+            },
+            {
+              "$type": "ServerLuaCall",
+              "luaCallType": "FromGroup",
+              "funcName": "SLC_CharAmusePillar_Report_Normal",
+              "LIAAKLHNPEN": 1,
+              "MPPMFEDKGHC": "BrickWall_Counter_Normal",
+              "BOKNHLDBKKK": 0.0,
+              "CHOIIMHDNHK": 0.0
+            }
+          ]
+        },
+        "BrickWall_DelaySLC": {
+          "stacking": "Multiple",
+          "modifierName": "",
+          "duration": 0.10000000149011612,
+          "bonusCriticalHurt": 100.0,
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValueToOverrideMap",
+              "globalValueKey": "GV_BrickWall_Counter",
+              "overrideMapKey": "BrickWall_Counter"
+            },
+            {
+              "$type": "ServerLuaCall",
+              "luaCallType": "FromGroup",
+              "funcName": "SLC_CharAmusePillar_BrickCount",
+              "LIAAKLHNPEN": 1,
+              "MPPMFEDKGHC": "BrickWall_Counter",
+              "BOKNHLDBKKK": 0.0,
+              "CHOIIMHDNHK": 0.0
+            }
+          ]
+        },
+        "BrickWall_CreateLocalGadget": {
+          "modifierName": "",
+          "bonusCriticalHurt": 100.0,
+          "onAdded": [
+            {
+              "$type": "CreateGadget",
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                }
+              },
+              "sightGroupWithOwner": true,
+              "gadgetID": 70320029,
+              "byServer": true
+            },
+            {
+              "$type": "CreateGadget",
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "offset": {
+                  "x": 3.0,
+                  "y": 0.0,
+                  "z": 0.0
+                }
+              },
+              "sightGroupWithOwner": true,
+              "gadgetID": 70320030,
+              "byServer": true
+            },
+            {
+              "$type": "CreateGadget",
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "offset": {
+                  "x": 6.0,
+                  "y": 0.0,
+                  "z": 0.0
+                }
+              },
+              "sightGroupWithOwner": true,
+              "gadgetID": 70320031,
+              "byServer": true
+            },
+            {
+              "$type": "CreateGadget",
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "offset": {
+                  "x": 9.0,
+                  "y": 0.0,
+                  "z": 0.0
+                }
+              },
+              "sightGroupWithOwner": true,
+              "gadgetID": 70320032,
+              "byServer": true
+            },
+            {
+              "$type": "CreateGadget",
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "offset": {
+                  "x": 12.0,
+                  "y": 0.0,
+                  "z": 0.0
+                }
+              },
+              "sightGroupWithOwner": true,
+              "gadgetID": 70320033,
+              "byServer": true
+            },
+            {
+              "$type": "CreateGadget",
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "offset": {
+                  "x": 15.0,
+                  "y": 0.0,
+                  "z": 0.0
+                }
+              },
+              "sightGroupWithOwner": true,
+              "gadgetID": 70320034,
+              "byServer": true
+            }
+          ]
+        },
+        "BirckWall_StaminaRecover": {
+          "stacking": "Multiple",
+          "modifierName": "",
+          "duration": 0.10000000149011612,
+          "bonusCriticalHurt": 100.0,
+          "onAdded": [
+            {
+              "$type": "ReviveStamina",
+              "target": "CurLocalAvatar",
+              "ratio": "BirckWall_StaminaRecover"
+            }
+          ]
+        },
+        "BirckWall_StaminaBuffEffect": {
+          "modifierName": "",
+          "duration": "BrickWall_BuffTime",
+          "bonusCriticalHurt": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "target": "CurLocalAvatar",
+              "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_DIK_BUFFC_01_Buff",
+              "effectTempleteID": -1.0
+            }
+          ]
+        },
+        "BrickWall_EraseBrick": {
+          "modifierName": "",
+          "bonusCriticalHurt": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "EraseBrickActivityMixin",
+              "BNJCFDKNPJE": 0.6499999761581421,
+              "JOOANHDJPJM": {
+                "Normal": "BrickWall_HP_Normal",
+                "Normal_Reverse": "BrickWall_HP_Normal",
+                "Stamina": "BrickWall_HP_Stamina",
+                "Line": "BrickWall_HP_Line",
+                "All": "BrickWall_HP_All"
+              },
+              "MDGEGODFBOI": {
+                "Normal": 1.0,
+                "Normal_Reverse": 1.0,
+                "Stamina": 3.0,
+                "Line": 3.0,
+                "All": 3.0
+              },
+              "JJLELGEMOFE": [
+                {
+                  "predicates": [
+                    {
+                      "BMKLHANGHMB": "Stamina",
+                      "KJFOPBHBIJF": "Less",
+                      "value": 1
+                    }
+                  ],
+                  "BMKLHANGHMB": "Stamina"
+                },
+                {
+                  "predicates": [
+                    {
+                      "BMKLHANGHMB": "Line",
+                      "KJFOPBHBIJF": "Less",
+                      "value": 2
+                    }
+                  ],
+                  "BMKLHANGHMB": "Line"
+                },
+                {
+                  "predicates": [
+                    {
+                      "BMKLHANGHMB": "All",
+                      "KJFOPBHBIJF": "Less",
+                      "value": 1
+                    }
+                  ],
+                  "BMKLHANGHMB": "All"
+                }
+              ],
+              "LDEEDKABELE": [
+                {
+                  "index": 10,
+                  "JJLELGEMOFE": [
+                    {
+                      "predicates": [
+                        {
+                          "BMKLHANGHMB": "Stamina",
+                          "KJFOPBHBIJF": "Less",
+                          "value": 1
+                        }
+                      ],
+                      "BMKLHANGHMB": "Stamina"
+                    }
+                  ]
+                },
+                {
+                  "index": 25,
+                  "JJLELGEMOFE": [
+                    {
+                      "predicates": [
+                        {
+                          "BMKLHANGHMB": "Stamina",
+                          "KJFOPBHBIJF": "Less",
+                          "value": 1
+                        }
+                      ],
+                      "BMKLHANGHMB": "Stamina"
+                    },
+                    {
+                      "predicates": [
+                        {
+                          "BMKLHANGHMB": "Line",
+                          "KJFOPBHBIJF": "Less",
+                          "value": 1
+                        }
+                      ],
+                      "BMKLHANGHMB": "Line"
+                    }
+                  ]
+                },
+                {
+                  "index": 60,
+                  "JJLELGEMOFE": [
+                    {
+                      "predicates": [
+                        {
+                          "BMKLHANGHMB": "Stamina",
+                          "KJFOPBHBIJF": "Less",
+                          "value": 1
+                        }
+                      ],
+                      "BMKLHANGHMB": "Stamina"
+                    },
+                    {
+                      "predicates": [
+                        {
+                          "BMKLHANGHMB": "Line",
+                          "KJFOPBHBIJF": "Less",
+                          "value": 2
+                        }
+                      ],
+                      "BMKLHANGHMB": "Line"
+                    }
+                  ]
+                },
+                {
+                  "index": 120,
+                  "JJLELGEMOFE": [
+                    {
+                      "predicates": [
+                        {
+                          "BMKLHANGHMB": "Stamina",
+                          "KJFOPBHBIJF": "Less",
+                          "value": 1
+                        }
+                      ],
+                      "BMKLHANGHMB": "Stamina"
+                    },
+                    {
+                      "predicates": [
+                        {
+                          "BMKLHANGHMB": "Line",
+                          "KJFOPBHBIJF": "Less",
+                          "value": 2
+                        }
+                      ],
+                      "BMKLHANGHMB": "Line"
+                    },
+                    {
+                      "predicates": [
+                        {
+                          "BMKLHANGHMB": "All",
+                          "KJFOPBHBIJF": "Less",
+                          "value": 1
+                        }
+                      ],
+                      "BMKLHANGHMB": "All"
+                    }
+                  ]
+                }
+              ],
+              "DHMNGDEACCD": "SGV_BrickWall_Mode",
+              "CDHAHJPMBAN": {
+                "1": [
+                  {
+                    "index": 20,
+                    "JJLELGEMOFE": [
+                      {
+                        "predicates": [
+                          {
+                            "BMKLHANGHMB": "Stamina",
+                            "KJFOPBHBIJF": "Less",
+                            "value": 1
+                          }
+                        ],
+                        "BMKLHANGHMB": "Stamina"
+                      }
+                    ]
+                  },
+                  {
+                    "index": 45,
+                    "JJLELGEMOFE": [
+                      {
+                        "predicates": [
+                          {
+                            "BMKLHANGHMB": "Stamina",
+                            "KJFOPBHBIJF": "Less",
+                            "value": 1
+                          }
+                        ],
+                        "BMKLHANGHMB": "Stamina"
+                      },
+                      {
+                        "predicates": [
+                          {
+                            "BMKLHANGHMB": "Line",
+                            "KJFOPBHBIJF": "Less",
+                            "value": 1
+                          }
+                        ],
+                        "BMKLHANGHMB": "Line"
+                      }
+                    ]
+                  },
+                  {
+                    "index": 100,
+                    "JJLELGEMOFE": [
+                      {
+                        "predicates": [
+                          {
+                            "BMKLHANGHMB": "Stamina",
+                            "KJFOPBHBIJF": "Less",
+                            "value": 1
+                          }
+                        ],
+                        "BMKLHANGHMB": "Stamina"
+                      },
+                      {
+                        "predicates": [
+                          {
+                            "BMKLHANGHMB": "Line",
+                            "KJFOPBHBIJF": "Less",
+                            "value": 2
+                          }
+                        ],
+                        "BMKLHANGHMB": "Line"
+                      }
+                    ]
+                  },
+                  {
+                    "index": 240,
+                    "JJLELGEMOFE": [
+                      {
+                        "predicates": [
+                          {
+                            "BMKLHANGHMB": "Stamina",
+                            "KJFOPBHBIJF": "Less",
+                            "value": 1
+                          }
+                        ],
+                        "BMKLHANGHMB": "Stamina"
+                      },
+                      {
+                        "predicates": [
+                          {
+                            "BMKLHANGHMB": "Line",
+                            "KJFOPBHBIJF": "Less",
+                            "value": 2
+                          }
+                        ],
+                        "BMKLHANGHMB": "Line"
+                      },
+                      {
+                        "predicates": [
+                          {
+                            "BMKLHANGHMB": "All",
+                            "KJFOPBHBIJF": "Less",
+                            "value": 1
+                          }
+                        ],
+                        "BMKLHANGHMB": "All"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "JJHGOGMDDDM": [
+                {
+                  "$type": "ApplyModifier",
+                  "target": "AllTeams",
+                  "modifierName": "BirckWall_StaminaRecover"
+                },
+                {
+                  "$type": "ApplyModifier",
+                  "target": "AllTeams",
+                  "modifierName": "BirckWall_StaminaBuffEffect"
+                }
+              ],
+              "BJPPFICBGMN": "BrickWall_BuffTime",
+              "FBNCPOKAIII": 3.0,
+              "JOCKBLBECLM": [
+                {
+                  "JJNLBKHMAHD": [0],
+                  "BNJAEDEGMAL": ["Idle"],
+                  "JIBGGICJCNP": ["Falling"],
+                  "ENNJJBNBHML": ["Normal", "Normal_Reverse"],
+                  "GGLDMDCHCJA": [
+                    "Normal",
+                    "Normal_Reverse",
+                    "Stamina",
+                    "Line",
+                    "All"
+                  ],
+                  "NMFEBOHLCLN": ["Attack"]
+                },
+                {
+                  "JJNLBKHMAHD": [1],
+                  "BNJAEDEGMAL": ["Idle"],
+                  "JIBGGICJCNP": ["Falling"],
+                  "ENNJJBNBHML": ["Normal", "Normal_Reverse"],
+                  "GGLDMDCHCJA": [
+                    "Normal",
+                    "Normal_Reverse",
+                    "Stamina",
+                    "Line",
+                    "All"
+                  ],
+                  "NMFEBOHLCLN": ["Attack"]
+                },
+                {
+                  "JJNLBKHMAHD": [2],
+                  "BNJAEDEGMAL": ["Idle"],
+                  "JIBGGICJCNP": ["Falling"],
+                  "ENNJJBNBHML": ["Normal", "Normal_Reverse"],
+                  "GGLDMDCHCJA": [
+                    "Normal",
+                    "Normal_Reverse",
+                    "Stamina",
+                    "Line",
+                    "All"
+                  ],
+                  "NMFEBOHLCLN": ["Attack"]
+                },
+                {
+                  "JJNLBKHMAHD": [3],
+                  "BNJAEDEGMAL": ["Idle"],
+                  "JIBGGICJCNP": ["Falling"],
+                  "ENNJJBNBHML": ["Normal", "Normal_Reverse"],
+                  "GGLDMDCHCJA": [
+                    "Normal",
+                    "Normal_Reverse",
+                    "Stamina",
+                    "Line",
+                    "All"
+                  ],
+                  "NMFEBOHLCLN": ["Attack"]
+                },
+                {
+                  "JJNLBKHMAHD": [4],
+                  "BNJAEDEGMAL": ["Idle"],
+                  "JIBGGICJCNP": ["Falling"],
+                  "ENNJJBNBHML": ["Normal", "Normal_Reverse"],
+                  "GGLDMDCHCJA": [
+                    "Normal",
+                    "Normal_Reverse",
+                    "Stamina",
+                    "Line",
+                    "All"
+                  ],
+                  "NMFEBOHLCLN": ["Attack"]
+                },
+                {
+                  "JJNLBKHMAHD": [5],
+                  "BNJAEDEGMAL": ["Idle"],
+                  "JIBGGICJCNP": ["Falling"],
+                  "ENNJJBNBHML": ["Normal", "Normal_Reverse"],
+                  "GGLDMDCHCJA": [
+                    "Normal",
+                    "Normal_Reverse",
+                    "Stamina",
+                    "Line",
+                    "All"
+                  ],
+                  "NMFEBOHLCLN": ["Attack"]
+                },
+                {
+                  "JJNLBKHMAHD": [0],
+                  "BNJAEDEGMAL": ["Idle", "ToExplode"],
+                  "JIBGGICJCNP": ["Falling"],
+                  "ENNJJBNBHML": ["Line"],
+                  "GGLDMDCHCJA": [
+                    "Normal",
+                    "Normal_Reverse",
+                    "Stamina",
+                    "Line",
+                    "All"
+                  ],
+                  "NMFEBOHLCLN": ["Attack", "Explode"]
+                },
+                {
+                  "JJNLBKHMAHD": [1],
+                  "BNJAEDEGMAL": ["Idle", "ToExplode"],
+                  "JIBGGICJCNP": ["Falling"],
+                  "ENNJJBNBHML": ["Line"],
+                  "GGLDMDCHCJA": [
+                    "Normal",
+                    "Normal_Reverse",
+                    "Stamina",
+                    "Line",
+                    "All"
+                  ],
+                  "NMFEBOHLCLN": ["Attack", "Explode"]
+                },
+                {
+                  "JJNLBKHMAHD": [2],
+                  "BNJAEDEGMAL": ["Idle", "ToExplode"],
+                  "JIBGGICJCNP": ["Falling"],
+                  "ENNJJBNBHML": ["Line"],
+                  "GGLDMDCHCJA": [
+                    "Normal",
+                    "Normal_Reverse",
+                    "Stamina",
+                    "Line",
+                    "All"
+                  ],
+                  "NMFEBOHLCLN": ["Attack", "Explode"]
+                },
+                {
+                  "JJNLBKHMAHD": [3],
+                  "BNJAEDEGMAL": ["Idle", "ToExplode"],
+                  "JIBGGICJCNP": ["Falling"],
+                  "ENNJJBNBHML": ["Line"],
+                  "GGLDMDCHCJA": [
+                    "Normal",
+                    "Normal_Reverse",
+                    "Stamina",
+                    "Line",
+                    "All"
+                  ],
+                  "NMFEBOHLCLN": ["Attack", "Explode"]
+                },
+                {
+                  "JJNLBKHMAHD": [4],
+                  "BNJAEDEGMAL": ["Idle", "ToExplode"],
+                  "JIBGGICJCNP": ["Falling"],
+                  "ENNJJBNBHML": ["Line"],
+                  "GGLDMDCHCJA": [
+                    "Normal",
+                    "Normal_Reverse",
+                    "Stamina",
+                    "Line",
+                    "All"
+                  ],
+                  "NMFEBOHLCLN": ["Attack", "Explode"]
+                },
+                {
+                  "JJNLBKHMAHD": [5],
+                  "BNJAEDEGMAL": ["Idle", "ToExplode"],
+                  "JIBGGICJCNP": ["Falling"],
+                  "ENNJJBNBHML": ["Line"],
+                  "GGLDMDCHCJA": [
+                    "Normal",
+                    "Normal_Reverse",
+                    "Stamina",
+                    "Line",
+                    "All"
+                  ],
+                  "NMFEBOHLCLN": ["Attack", "Explode"]
+                },
+                {
+                  "JJNLBKHMAHD": [0],
+                  "BNJAEDEGMAL": ["Idle", "ToExplode"],
+                  "JIBGGICJCNP": ["Cleared"],
+                  "ENNJJBNBHML": ["All"],
+                  "GGLDMDCHCJA": [
+                    "Normal",
+                    "Normal_Reverse",
+                    "Stamina",
+                    "Line",
+                    "All"
+                  ],
+                  "NMFEBOHLCLN": ["Attack", "Explode"]
+                },
+                {
+                  "JJNLBKHMAHD": [1],
+                  "BNJAEDEGMAL": ["Idle", "ToExplode"],
+                  "JIBGGICJCNP": ["Cleared"],
+                  "ENNJJBNBHML": ["All"],
+                  "GGLDMDCHCJA": [
+                    "Normal",
+                    "Normal_Reverse",
+                    "Stamina",
+                    "Line",
+                    "All"
+                  ],
+                  "NMFEBOHLCLN": ["Attack", "Explode"]
+                },
+                {
+                  "JJNLBKHMAHD": [2],
+                  "BNJAEDEGMAL": ["Idle", "ToExplode"],
+                  "JIBGGICJCNP": ["Cleared"],
+                  "ENNJJBNBHML": ["All"],
+                  "GGLDMDCHCJA": [
+                    "Normal",
+                    "Normal_Reverse",
+                    "Stamina",
+                    "Line",
+                    "All"
+                  ],
+                  "NMFEBOHLCLN": ["Attack", "Explode"]
+                },
+                {
+                  "JJNLBKHMAHD": [3],
+                  "BNJAEDEGMAL": ["Idle", "ToExplode"],
+                  "JIBGGICJCNP": ["Cleared"],
+                  "ENNJJBNBHML": ["All"],
+                  "GGLDMDCHCJA": [
+                    "Normal",
+                    "Normal_Reverse",
+                    "Stamina",
+                    "Line",
+                    "All"
+                  ],
+                  "NMFEBOHLCLN": ["Attack", "Explode"]
+                },
+                {
+                  "JJNLBKHMAHD": [4],
+                  "BNJAEDEGMAL": ["Idle", "ToExplode"],
+                  "JIBGGICJCNP": ["Cleared"],
+                  "ENNJJBNBHML": ["All"],
+                  "GGLDMDCHCJA": [
+                    "Normal",
+                    "Normal_Reverse",
+                    "Stamina",
+                    "Line",
+                    "All"
+                  ],
+                  "NMFEBOHLCLN": ["Attack", "Explode"]
+                },
+                {
+                  "JJNLBKHMAHD": [5],
+                  "BNJAEDEGMAL": ["Idle", "ToExplode"],
+                  "JIBGGICJCNP": ["Cleared"],
+                  "ENNJJBNBHML": ["All"],
+                  "GGLDMDCHCJA": [
+                    "Normal",
+                    "Normal_Reverse",
+                    "Stamina",
+                    "Line",
+                    "All"
+                  ],
+                  "NMFEBOHLCLN": ["Attack", "Explode"]
+                },
+                {
+                  "JJNLBKHMAHD": [0],
+                  "BNJAEDEGMAL": ["Idle"],
+                  "JIBGGICJCNP": ["Falling"],
+                  "ENNJJBNBHML": ["Stamina"],
+                  "GGLDMDCHCJA": [
+                    "Normal",
+                    "Normal_Reverse",
+                    "Stamina",
+                    "Line",
+                    "All"
+                  ],
+                  "NMFEBOHLCLN": ["Attack"]
+                },
+                {
+                  "JJNLBKHMAHD": [1],
+                  "BNJAEDEGMAL": ["Idle"],
+                  "JIBGGICJCNP": ["Falling"],
+                  "ENNJJBNBHML": ["Stamina"],
+                  "GGLDMDCHCJA": [
+                    "Normal",
+                    "Normal_Reverse",
+                    "Stamina",
+                    "Line",
+                    "All"
+                  ],
+                  "NMFEBOHLCLN": ["Attack"]
+                },
+                {
+                  "JJNLBKHMAHD": [2],
+                  "BNJAEDEGMAL": ["Idle"],
+                  "JIBGGICJCNP": ["Falling"],
+                  "ENNJJBNBHML": ["Stamina"],
+                  "GGLDMDCHCJA": [
+                    "Normal",
+                    "Normal_Reverse",
+                    "Stamina",
+                    "Line",
+                    "All"
+                  ],
+                  "NMFEBOHLCLN": ["Attack"]
+                },
+                {
+                  "JJNLBKHMAHD": [3],
+                  "BNJAEDEGMAL": ["Idle"],
+                  "JIBGGICJCNP": ["Falling"],
+                  "ENNJJBNBHML": ["Stamina"],
+                  "GGLDMDCHCJA": [
+                    "Normal",
+                    "Normal_Reverse",
+                    "Stamina",
+                    "Line",
+                    "All"
+                  ],
+                  "NMFEBOHLCLN": ["Attack"]
+                },
+                {
+                  "JJNLBKHMAHD": [4],
+                  "BNJAEDEGMAL": ["Idle"],
+                  "JIBGGICJCNP": ["Falling"],
+                  "ENNJJBNBHML": ["Stamina"],
+                  "GGLDMDCHCJA": [
+                    "Normal",
+                    "Normal_Reverse",
+                    "Stamina",
+                    "Line",
+                    "All"
+                  ],
+                  "NMFEBOHLCLN": ["Attack"]
+                },
+                {
+                  "JJNLBKHMAHD": [5],
+                  "BNJAEDEGMAL": ["Idle"],
+                  "JIBGGICJCNP": ["Falling"],
+                  "ENNJJBNBHML": ["Stamina"],
+                  "GGLDMDCHCJA": [
+                    "Normal",
+                    "Normal_Reverse",
+                    "Stamina",
+                    "Line",
+                    "All"
+                  ],
+                  "NMFEBOHLCLN": ["Attack"]
+                },
+                {
+                  "JJNLBKHMAHD": [0],
+                  "BNJAEDEGMAL": ["Idle"],
+                  "JIBGGICJCNP": ["ToExplode"],
+                  "ENNJJBNBHML": ["Line"],
+                  "GGLDMDCHCJA": [
+                    "Normal",
+                    "Normal_Reverse",
+                    "Stamina",
+                    "Line",
+                    "All"
+                  ],
+                  "NMFEBOHLCLN": ["None", "Attack", "Explode"]
+                },
+                {
+                  "JJNLBKHMAHD": [1],
+                  "BNJAEDEGMAL": ["Idle"],
+                  "JIBGGICJCNP": ["ToExplode"],
+                  "ENNJJBNBHML": ["Line"],
+                  "GGLDMDCHCJA": [
+                    "Normal",
+                    "Normal_Reverse",
+                    "Stamina",
+                    "Line",
+                    "All"
+                  ],
+                  "NMFEBOHLCLN": ["None", "Attack", "Explode"]
+                },
+                {
+                  "JJNLBKHMAHD": [2],
+                  "BNJAEDEGMAL": ["Idle"],
+                  "JIBGGICJCNP": ["ToExplode"],
+                  "ENNJJBNBHML": ["Line"],
+                  "GGLDMDCHCJA": [
+                    "Normal",
+                    "Normal_Reverse",
+                    "Stamina",
+                    "Line",
+                    "All"
+                  ],
+                  "NMFEBOHLCLN": ["None", "Attack", "Explode"]
+                },
+                {
+                  "JJNLBKHMAHD": [3],
+                  "BNJAEDEGMAL": ["Idle"],
+                  "JIBGGICJCNP": ["ToExplode"],
+                  "ENNJJBNBHML": ["Line"],
+                  "GGLDMDCHCJA": [
+                    "Normal",
+                    "Normal_Reverse",
+                    "Stamina",
+                    "Line",
+                    "All"
+                  ],
+                  "NMFEBOHLCLN": ["None", "Attack", "Explode"]
+                },
+                {
+                  "JJNLBKHMAHD": [4],
+                  "BNJAEDEGMAL": ["Idle"],
+                  "JIBGGICJCNP": ["ToExplode"],
+                  "ENNJJBNBHML": ["Line"],
+                  "GGLDMDCHCJA": [
+                    "Normal",
+                    "Normal_Reverse",
+                    "Stamina",
+                    "Line",
+                    "All"
+                  ],
+                  "NMFEBOHLCLN": ["None", "Attack", "Explode"]
+                },
+                {
+                  "JJNLBKHMAHD": [5],
+                  "BNJAEDEGMAL": ["Idle"],
+                  "JIBGGICJCNP": ["ToExplode"],
+                  "ENNJJBNBHML": ["Line"],
+                  "GGLDMDCHCJA": [
+                    "Normal",
+                    "Normal_Reverse",
+                    "Stamina",
+                    "Line",
+                    "All"
+                  ],
+                  "NMFEBOHLCLN": ["None", "Attack", "Explode"]
+                },
+                {
+                  "JJNLBKHMAHD": [0],
+                  "BNJAEDEGMAL": ["Idle"],
+                  "JIBGGICJCNP": ["ToExplode"],
+                  "ENNJJBNBHML": ["All"],
+                  "GGLDMDCHCJA": [
+                    "Normal",
+                    "Normal_Reverse",
+                    "Stamina",
+                    "Line",
+                    "All"
+                  ],
+                  "NMFEBOHLCLN": ["None", "Attack", "Explode", "Cleared"]
+                },
+                {
+                  "JJNLBKHMAHD": [1],
+                  "BNJAEDEGMAL": ["Idle"],
+                  "JIBGGICJCNP": ["ToExplode"],
+                  "ENNJJBNBHML": ["All"],
+                  "GGLDMDCHCJA": [
+                    "Normal",
+                    "Normal_Reverse",
+                    "Stamina",
+                    "Line",
+                    "All"
+                  ],
+                  "NMFEBOHLCLN": ["None", "Attack", "Explode", "Cleared"]
+                },
+                {
+                  "JJNLBKHMAHD": [2],
+                  "BNJAEDEGMAL": ["Idle"],
+                  "JIBGGICJCNP": ["ToExplode"],
+                  "ENNJJBNBHML": ["All"],
+                  "GGLDMDCHCJA": [
+                    "Normal",
+                    "Normal_Reverse",
+                    "Stamina",
+                    "Line",
+                    "All"
+                  ],
+                  "NMFEBOHLCLN": ["None", "Attack", "Explode", "Cleared"]
+                },
+                {
+                  "JJNLBKHMAHD": [3],
+                  "BNJAEDEGMAL": ["Idle"],
+                  "JIBGGICJCNP": ["ToExplode"],
+                  "ENNJJBNBHML": ["All"],
+                  "GGLDMDCHCJA": [
+                    "Normal",
+                    "Normal_Reverse",
+                    "Stamina",
+                    "Line",
+                    "All"
+                  ],
+                  "NMFEBOHLCLN": ["None", "Attack", "Explode", "Cleared"]
+                },
+                {
+                  "JJNLBKHMAHD": [4],
+                  "BNJAEDEGMAL": ["Idle"],
+                  "JIBGGICJCNP": ["ToExplode"],
+                  "ENNJJBNBHML": ["All"],
+                  "GGLDMDCHCJA": [
+                    "Normal",
+                    "Normal_Reverse",
+                    "Stamina",
+                    "Line",
+                    "All"
+                  ],
+                  "NMFEBOHLCLN": ["None", "Attack", "Explode", "Cleared"]
+                },
+                {
+                  "JJNLBKHMAHD": [5],
+                  "BNJAEDEGMAL": ["Idle"],
+                  "JIBGGICJCNP": ["ToExplode"],
+                  "ENNJJBNBHML": ["All"],
+                  "GGLDMDCHCJA": [
+                    "Normal",
+                    "Normal_Reverse",
+                    "Stamina",
+                    "Line",
+                    "All"
+                  ],
+                  "NMFEBOHLCLN": ["None", "Attack", "Explode", "Cleared"]
+                },
+                {
+                  "JJNLBKHMAHD": [0, 1, 2, 3, 4, 5],
+                  "BNJAEDEGMAL": ["Idle", "ToExplode"],
+                  "JIBGGICJCNP": ["Cleared"],
+                  "ENNJJBNBHML": ["All"],
+                  "GGLDMDCHCJA": [
+                    "Normal",
+                    "Normal_Reverse",
+                    "Stamina",
+                    "Line",
+                    "All"
+                  ],
+                  "NMFEBOHLCLN": ["None", "Attack", "Explode", "Cleared"]
+                }
+              ],
+              "GBPHFNNELKF": [
+                [
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_01_Blast",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": -3.5
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  },
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_DownSmoke",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  }
+                ],
+                [
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_01_Blast",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 3.0,
+                        "y": 0.0,
+                        "z": -3.5
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  },
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_DownSmoke",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 3.0,
+                        "y": 0.0,
+                        "z": 0.0
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  }
+                ],
+                [
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_01_Blast",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 6.0,
+                        "y": 0.0,
+                        "z": -3.5
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  },
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_DownSmoke",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 6.0,
+                        "y": 0.0,
+                        "z": 0.0
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  }
+                ],
+                [
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_01_Blast",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 9.0,
+                        "y": 0.0,
+                        "z": -3.5
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  },
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_DownSmoke",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 9.0,
+                        "y": 0.0,
+                        "z": 0.0
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  }
+                ],
+                [
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_01_Blast",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 12.0,
+                        "y": 0.0,
+                        "z": -3.5
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  },
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_DownSmoke",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 12.0,
+                        "y": 0.0,
+                        "z": 0.0
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  }
+                ],
+                [
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_01_Blast",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 15.0,
+                        "y": 0.0,
+                        "z": -3.5
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  },
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_DownSmoke",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 15.0,
+                        "y": 0.0,
+                        "z": 0.0
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  }
+                ],
+                [
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_04_Blast",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.10000000149011612
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  },
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_DownSmoke",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  }
+                ],
+                [
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_04_Blast",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 3.0,
+                        "y": 0.0,
+                        "z": 0.10000000149011612
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  },
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_DownSmoke",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 3.0,
+                        "y": 0.0,
+                        "z": 0.0
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  }
+                ],
+                [
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_04_Blast",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 6.0,
+                        "y": 0.0,
+                        "z": 0.10000000149011612
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  },
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_DownSmoke",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 6.0,
+                        "y": 0.0,
+                        "z": 0.0
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  }
+                ],
+                [
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_04_Blast",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 9.0,
+                        "y": 0.0,
+                        "z": 0.10000000149011612
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  },
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_DownSmoke",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 9.0,
+                        "y": 0.0,
+                        "z": 0.0
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  }
+                ],
+                [
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_04_Blast",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 12.0,
+                        "y": 0.0,
+                        "z": 0.10000000149011612
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  },
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_DownSmoke",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 12.0,
+                        "y": 0.0,
+                        "z": 0.0
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  }
+                ],
+                [
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_04_Blast",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 15.0,
+                        "y": 0.0,
+                        "z": 0.10000000149011612
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  },
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_DownSmoke",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 15.0,
+                        "y": 0.0,
+                        "z": 0.0
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  }
+                ],
+                [
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_03_Blast",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  },
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_DownSmoke",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  }
+                ],
+                [
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_03_Blast",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 3.0,
+                        "y": 0.0,
+                        "z": 0.0
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  },
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_DownSmoke",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 3.0,
+                        "y": 0.0,
+                        "z": 0.0
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  }
+                ],
+                [
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_03_Blast",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 6.0,
+                        "y": 0.0,
+                        "z": 0.0
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  },
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_DownSmoke",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 6.0,
+                        "y": 0.0,
+                        "z": 0.0
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  }
+                ],
+                [
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_03_Blast",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 9.0,
+                        "y": 0.0,
+                        "z": 0.0
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  },
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_DownSmoke",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 9.0,
+                        "y": 0.0,
+                        "z": 0.0
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  }
+                ],
+                [
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_03_Blast",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 12.0,
+                        "y": 0.0,
+                        "z": 0.0
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  },
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_DownSmoke",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 12.0,
+                        "y": 0.0,
+                        "z": 0.0
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  }
+                ],
+                [
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_03_Blast",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 15.0,
+                        "y": 0.0,
+                        "z": 0.0
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  },
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_DownSmoke",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 15.0,
+                        "y": 0.0,
+                        "z": 0.0
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  }
+                ],
+                [
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_05_Blast",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  },
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_DownSmoke",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  }
+                ],
+                [
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_05_Blast",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 3.0,
+                        "y": 0.0,
+                        "z": 0.0
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  },
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_DownSmoke",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 3.0,
+                        "y": 0.0,
+                        "z": 0.0
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  }
+                ],
+                [
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_05_Blast",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 6.0,
+                        "y": 0.0,
+                        "z": 0.0
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  },
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_DownSmoke",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 6.0,
+                        "y": 0.0,
+                        "z": 0.0
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  }
+                ],
+                [
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_05_Blast",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 9.0,
+                        "y": 0.0,
+                        "z": 0.0
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  },
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_DownSmoke",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 9.0,
+                        "y": 0.0,
+                        "z": 0.0
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  }
+                ],
+                [
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_05_Blast",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 12.0,
+                        "y": 0.0,
+                        "z": 0.0
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  },
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_DownSmoke",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 12.0,
+                        "y": 0.0,
+                        "z": 0.0
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  }
+                ],
+                [
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_05_Blast",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 15.0,
+                        "y": 0.0,
+                        "z": 0.0
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  },
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_DownSmoke",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 15.0,
+                        "y": 0.0,
+                        "z": 0.0
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  }
+                ],
+                [
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_Sceneobj_RockWall_RedWarning",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.20000000298023224
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  }
+                ],
+                [
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_Sceneobj_RockWall_RedWarning",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 3.0,
+                        "y": 0.0,
+                        "z": 0.20000000298023224
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  }
+                ],
+                [
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_Sceneobj_RockWall_RedWarning",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 6.0,
+                        "y": 0.0,
+                        "z": 0.20000000298023224
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  }
+                ],
+                [
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_Sceneobj_RockWall_RedWarning",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 9.0,
+                        "y": 0.0,
+                        "z": 0.20000000298023224
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  }
+                ],
+                [
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_Sceneobj_RockWall_RedWarning",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 12.0,
+                        "y": 0.0,
+                        "z": 0.20000000298023224
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  }
+                ],
+                [
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_Sceneobj_RockWall_RedWarning",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 15.0,
+                        "y": 0.0,
+                        "z": 0.20000000298023224
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  }
+                ],
+                [
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_Sceneobj_RockWall_RedWarning",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.15000000596046448
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  }
+                ],
+                [
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_Sceneobj_RockWall_RedWarning",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 3.0,
+                        "y": 0.0,
+                        "z": 0.15000000596046448
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  }
+                ],
+                [
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_Sceneobj_RockWall_RedWarning",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 6.0,
+                        "y": 0.0,
+                        "z": 0.15000000596046448
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  }
+                ],
+                [
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_Sceneobj_RockWall_RedWarning",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 9.0,
+                        "y": 0.0,
+                        "z": 0.15000000596046448
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  }
+                ],
+                [
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_Sceneobj_RockWall_RedWarning",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 12.0,
+                        "y": 0.0,
+                        "z": 0.15000000596046448
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  }
+                ],
+                [
+                  {
+                    "$type": "FireEffect",
+                    "healLimitedByCasterMaxHPRatio": "Eff_Sceneobj_RockWall_RedWarning",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 15.0,
+                        "y": 0.0,
+                        "z": 0.15000000596046448
+                      }
+                    },
+                    "effectTempleteID": -1.0
+                  }
+                ],
+                [
+                  {
+                    "$type": "ApplyModifier",
+                    "modifierName": "BrickWall_Disappear"
+                  }
+                ]
+              ],
+              "DJPDPIIDNKN": "BrickState",
+              "CKLBEHDEKBC": [
+                {
+                  "BGNOJMNJFOF": 10.0
+                },
+                {
+                  "state": "ToExplode",
+                  "BGNOJMNJFOF": 10.0
+                },
+                {
+                  "state": "Falling",
+                  "BGNOJMNJFOF": 11.0
+                },
+                {
+                  "state": "Cleared",
+                  "BGNOJMNJFOF": 12.0
+                },
+                {
+                  "BMKLHANGHMB": "Normal_Reverse",
+                  "BGNOJMNJFOF": 50.0
+                },
+                {
+                  "BMKLHANGHMB": "Normal_Reverse",
+                  "state": "ToExplode",
+                  "BGNOJMNJFOF": 50.0
+                },
+                {
+                  "BMKLHANGHMB": "Normal_Reverse",
+                  "state": "Falling",
+                  "BGNOJMNJFOF": 51.0
+                },
+                {
+                  "BMKLHANGHMB": "Normal_Reverse",
+                  "state": "Cleared",
+                  "BGNOJMNJFOF": 52.0
+                },
+                {
+                  "BMKLHANGHMB": "Stamina",
+                  "BGNOJMNJFOF": 20.0
+                },
+                {
+                  "BMKLHANGHMB": "Stamina",
+                  "state": "ToExplode",
+                  "BGNOJMNJFOF": 20.0
+                },
+                {
+                  "BMKLHANGHMB": "Stamina",
+                  "state": "Falling",
+                  "BGNOJMNJFOF": 21.0
+                },
+                {
+                  "BMKLHANGHMB": "Stamina",
+                  "state": "Cleared",
+                  "BGNOJMNJFOF": 22.0
+                },
+                {
+                  "BMKLHANGHMB": "Line",
+                  "BGNOJMNJFOF": 30.0
+                },
+                {
+                  "BMKLHANGHMB": "Line",
+                  "state": "ToExplode",
+                  "BGNOJMNJFOF": 33.0
+                },
+                {
+                  "BMKLHANGHMB": "Line",
+                  "state": "Falling",
+                  "BGNOJMNJFOF": 31.0
+                },
+                {
+                  "BMKLHANGHMB": "Line",
+                  "state": "Cleared",
+                  "BGNOJMNJFOF": 32.0
+                },
+                {
+                  "BMKLHANGHMB": "All",
+                  "BGNOJMNJFOF": 40.0
+                },
+                {
+                  "BMKLHANGHMB": "All",
+                  "state": "ToExplode",
+                  "BGNOJMNJFOF": 43.0
+                },
+                {
+                  "BMKLHANGHMB": "All",
+                  "state": "Falling",
+                  "BGNOJMNJFOF": 41.0
+                },
+                {
+                  "BMKLHANGHMB": "All",
+                  "state": "Cleared",
+                  "BGNOJMNJFOF": 42.0
+                }
+              ],
+              "LJFJNOIMBEN": "BrickHP",
+              "EJNPJPMOLMA": "GV_BrickWall_Counter",
+              "AHMFPJNOGNI": {
+                "Normal": "GV_BrickWall_Counter_Normal",
+                "Normal_Reverse": "GV_BrickWall_Counter_Normal",
+                "Stamina": "GV_BrickWall_Counter_Stamina",
+                "Line": "GV_BrickWall_Counter_Line",
+                "All": "GV_BrickWall_Counter_All"
+              },
+              "CLDBOJJMGEJ": [
+                "GV_BrickWall_Durability_01",
+                "GV_BrickWall_Durability_02",
+                "GV_BrickWall_Durability_03",
+                "GV_BrickWall_Durability_04",
+                "GV_BrickWall_Durability_05",
+                "GV_BrickWall_Durability_06"
+              ],
+              "IPJHJDHFFDF": {
+                "2": ["Stamina"]
+              },
+              "JOFPMMPFCDC": {
+                "0": ["Stamina"],
+                "1": ["Line"],
+                "2": ["All", "Line"]
+              }
+            }
+          ]
+        },
+        "BrickWall_FadeIn": {
+          "modifierName": "",
+          "duration": 0.4000000059604645,
+          "bonusCriticalHurt": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "EntityDitherMixin",
+              "cutOutTime": 0.5
+            }
+          ]
+        },
+        "BrickWall_Disappear": {
+          "modifierName": "",
+          "duration": 0.10000000149011612,
+          "bonusCriticalHurt": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "EntityDitherMixin"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "ApplyModifier",
+              "modifierName": "BrickWall_FadeIn"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "SetGlobalValueToOverrideMap",
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "SGV_BrickWall_HP_Normal",
+              "ratio": 0.0,
+              "compareType": "MoreThan"
+            }
+          ],
+          "globalValueKey": "SGV_BrickWall_HP_Normal",
+          "overrideMapKey": "BrickWall_HP_Normal"
+        },
+        {
+          "$type": "SetGlobalValueToOverrideMap",
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "SGV_BrickWall_HP_Stamina",
+              "ratio": 0.0,
+              "compareType": "MoreThan"
+            }
+          ],
+          "globalValueKey": "SGV_BrickWall_HP_Stamina",
+          "overrideMapKey": "BrickWall_HP_Stamina"
+        },
+        {
+          "$type": "SetGlobalValueToOverrideMap",
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "SGV_BrickWall_HP_Line",
+              "ratio": 0.0,
+              "compareType": "MoreThan"
+            }
+          ],
+          "globalValueKey": "SGV_BrickWall_HP_Line",
+          "overrideMapKey": "BrickWall_HP_Line"
+        },
+        {
+          "$type": "SetGlobalValueToOverrideMap",
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "SGV_BrickWall_HP_All",
+              "ratio": 0.0,
+              "compareType": "MoreThan"
+            }
+          ],
+          "globalValueKey": "SGV_BrickWall_HP_All",
+          "overrideMapKey": "BrickWall_HP_All"
+        },
+        {
+          "$type": "AttachModifier",
+          "modifierName": "BrickWall_EraseBrick"
+        },
+        {
+          "$type": "AttachModifier",
+          "modifierName": "BrickWall_CreateLocalGadget"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "SceneObj_Area_Common_Property_Prop_BrickWall_02",
+      "modifiers": {
+        "BrickWall_RockDurability": {
+          "modifierName": "",
+          "elementType": "Rock",
+          "bonusCriticalHurt": 9999.0,
+          "modifierMixins": [
+            {
+              "$type": "EraseBrickActivitySubMixin",
+              "NEMHILECFCC": "GV_BrickWall_Durability_01",
+              "actions": [
+                {
+                  "$type": "AddElementDurability",
+                  "ratio": 9999.0,
+                  "modifierName": "BrickWall_RockDurability",
+                  "useLimitRange": true,
+                  "maxValue": 9999.0,
+                  "minValue": 0.0
+                }
+              ]
+            }
+          ],
+          "onBeingHit": [
+            {
+              "$type": "FireEffect",
+              "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_Attack",
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                }
+              },
+              "effectTempleteID": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "modifierName": "BrickWall_RockDurability"
+        },
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 0.0,
+          "key": "GV_BrickWall_Durability_01",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        },
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 0.0,
+          "key": "GV_BrickWall_Counter",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        },
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 0.0,
+          "key": "GV_BrickWall_Counter_Normal",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        },
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 0.0,
+          "key": "GV_BrickWall_Counter_Stamina",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        },
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 0.0,
+          "key": "GV_BrickWall_Counter_Line",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        },
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 0.0,
+          "key": "GV_BrickWall_Counter_All",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "SceneObj_Area_Common_Property_Prop_BrickWall_03",
+      "modifiers": {
+        "BrickWall_RockDurability": {
+          "modifierName": "",
+          "elementType": "Rock",
+          "bonusCriticalHurt": 9999.0,
+          "modifierMixins": [
+            {
+              "$type": "EraseBrickActivitySubMixin",
+              "NEMHILECFCC": "GV_BrickWall_Durability_02",
+              "actions": [
+                {
+                  "$type": "AddElementDurability",
+                  "ratio": 9999.0,
+                  "modifierName": "BrickWall_RockDurability",
+                  "useLimitRange": true,
+                  "maxValue": 9999.0,
+                  "minValue": 0.0
+                }
+              ]
+            }
+          ],
+          "onBeingHit": [
+            {
+              "$type": "FireEffect",
+              "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_Attack",
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                }
+              },
+              "effectTempleteID": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "modifierName": "BrickWall_RockDurability"
+        },
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 0.0,
+          "key": "GV_BrickWall_Durability_02",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        },
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 0.0,
+          "key": "GV_BrickWall_Counter",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        },
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 0.0,
+          "key": "GV_BrickWall_Counter_Normal",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        },
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 0.0,
+          "key": "GV_BrickWall_Counter_Stamina",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        },
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 0.0,
+          "key": "GV_BrickWall_Counter_Line",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        },
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 0.0,
+          "key": "GV_BrickWall_Counter_All",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "SceneObj_Area_Common_Property_Prop_BrickWall_04",
+      "modifiers": {
+        "BrickWall_RockDurability": {
+          "modifierName": "",
+          "elementType": "Rock",
+          "bonusCriticalHurt": 9999.0,
+          "modifierMixins": [
+            {
+              "$type": "EraseBrickActivitySubMixin",
+              "NEMHILECFCC": "GV_BrickWall_Durability_03",
+              "actions": [
+                {
+                  "$type": "AddElementDurability",
+                  "ratio": 9999.0,
+                  "modifierName": "BrickWall_RockDurability",
+                  "useLimitRange": true,
+                  "maxValue": 9999.0,
+                  "minValue": 0.0
+                }
+              ]
+            }
+          ],
+          "onBeingHit": [
+            {
+              "$type": "FireEffect",
+              "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_Attack",
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                }
+              },
+              "effectTempleteID": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "modifierName": "BrickWall_RockDurability"
+        },
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 0.0,
+          "key": "GV_BrickWall_Durability_03",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        },
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 0.0,
+          "key": "GV_BrickWall_Counter",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        },
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 0.0,
+          "key": "GV_BrickWall_Counter_Normal",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        },
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 0.0,
+          "key": "GV_BrickWall_Counter_Stamina",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        },
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 0.0,
+          "key": "GV_BrickWall_Counter_Line",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        },
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 0.0,
+          "key": "GV_BrickWall_Counter_All",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "SceneObj_Area_Common_Property_Prop_BrickWall_05",
+      "modifiers": {
+        "BrickWall_RockDurability": {
+          "modifierName": "",
+          "elementType": "Rock",
+          "bonusCriticalHurt": 9999.0,
+          "modifierMixins": [
+            {
+              "$type": "EraseBrickActivitySubMixin",
+              "NEMHILECFCC": "GV_BrickWall_Durability_04",
+              "actions": [
+                {
+                  "$type": "AddElementDurability",
+                  "ratio": 9999.0,
+                  "modifierName": "BrickWall_RockDurability",
+                  "useLimitRange": true,
+                  "maxValue": 9999.0,
+                  "minValue": 0.0
+                }
+              ]
+            }
+          ],
+          "onBeingHit": [
+            {
+              "$type": "FireEffect",
+              "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_Attack",
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                }
+              },
+              "effectTempleteID": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "modifierName": "BrickWall_RockDurability"
+        },
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 0.0,
+          "key": "GV_BrickWall_Durability_04",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        },
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 0.0,
+          "key": "GV_BrickWall_Counter",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        },
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 0.0,
+          "key": "GV_BrickWall_Counter_Normal",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        },
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 0.0,
+          "key": "GV_BrickWall_Counter_Stamina",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        },
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 0.0,
+          "key": "GV_BrickWall_Counter_Line",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        },
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 0.0,
+          "key": "GV_BrickWall_Counter_All",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "SceneObj_Area_Common_Property_Prop_BrickWall_06",
+      "modifiers": {
+        "BrickWall_RockDurability": {
+          "modifierName": "",
+          "elementType": "Rock",
+          "bonusCriticalHurt": 9999.0,
+          "modifierMixins": [
+            {
+              "$type": "EraseBrickActivitySubMixin",
+              "NEMHILECFCC": "GV_BrickWall_Durability_05",
+              "actions": [
+                {
+                  "$type": "AddElementDurability",
+                  "ratio": 9999.0,
+                  "modifierName": "BrickWall_RockDurability",
+                  "useLimitRange": true,
+                  "maxValue": 9999.0,
+                  "minValue": 0.0
+                }
+              ]
+            }
+          ],
+          "onBeingHit": [
+            {
+              "$type": "FireEffect",
+              "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_Attack",
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                }
+              },
+              "effectTempleteID": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "modifierName": "BrickWall_RockDurability"
+        },
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 0.0,
+          "key": "GV_BrickWall_Durability_05",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        },
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 0.0,
+          "key": "GV_BrickWall_Counter",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        },
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 0.0,
+          "key": "GV_BrickWall_Counter_Normal",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        },
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 0.0,
+          "key": "GV_BrickWall_Counter_Stamina",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        },
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 0.0,
+          "key": "GV_BrickWall_Counter_Line",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        },
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 0.0,
+          "key": "GV_BrickWall_Counter_All",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "SceneObj_Area_Common_Property_Prop_BrickWall_07",
+      "modifiers": {
+        "BrickWall_RockDurability": {
+          "modifierName": "",
+          "elementType": "Rock",
+          "bonusCriticalHurt": 9999.0,
+          "modifierMixins": [
+            {
+              "$type": "EraseBrickActivitySubMixin",
+              "NEMHILECFCC": "GV_BrickWall_Durability_06",
+              "actions": [
+                {
+                  "$type": "AddElementDurability",
+                  "ratio": 9999.0,
+                  "modifierName": "BrickWall_RockDurability",
+                  "useLimitRange": true,
+                  "maxValue": 9999.0,
+                  "minValue": 0.0
+                }
+              ]
+            }
+          ],
+          "onBeingHit": [
+            {
+              "$type": "FireEffect",
+              "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RockWall_Attack",
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                }
+              },
+              "effectTempleteID": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "modifierName": "BrickWall_RockDurability"
+        },
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 0.0,
+          "key": "GV_BrickWall_Durability_06",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        },
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 0.0,
+          "key": "GV_BrickWall_Counter",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        },
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 0.0,
+          "key": "GV_BrickWall_Counter_Normal",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        },
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 0.0,
+          "key": "GV_BrickWall_Counter_Stamina",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        },
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 0.0,
+          "key": "GV_BrickWall_Counter_Line",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        },
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 0.0,
+          "key": "GV_BrickWall_Counter_All",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "SceneObj_Area_Common_Property_Prop_CharAmusementCoin_01",
+      "onAdded": [
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 1.0,
+          "key": "CharAmusement_Coin_Type",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "SceneObj_Area_Common_Property_Prop_CharAmusementCoin_02",
+      "onAdded": [
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 2.0,
+          "key": "CharAmusement_Coin_Type",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        },
+        {
+          "$type": "FireEffect",
+          "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_GlideChampCoin_Appear_Super",
+          "effectTempleteID": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "SceneObj_Area_Common_Property_Prop_FallAttackPillar_01",
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToSelfGlobalValueNoInitMixin",
+          "globalValueKey": "FallAttackPillar_Counter",
+          "valueSteps": [-0.5, 0.5, 99.0],
+          "modifierNameSteps": ["FallAttackPillar_Off", "FallAttackPillar_On"]
+        },
+        {
+          "$type": "AttachModifierToSelfGlobalValueNoInitMixin",
+          "globalValueKey": "FallAttackPillar_State",
+          "valueSteps": [-1.5, -0.5, 1.5, 2.5, 3.5],
+          "modifierNameSteps": [
+            "Blank",
+            "FallAttackPillar_HP1",
+            "FallAttackPillar_HP2",
+            "FallAttackPillar_HP3"
+          ]
+        },
+        {
+          "$type": "AttachToGadgetStateMixin",
+          "gadgetState": 201,
+          "modifierName": "FallAttackPillar_TurnOn_1"
+        },
+        {
+          "$type": "AttachToGadgetStateMixin",
+          "gadgetState": 202,
+          "modifierName": "FallAttackPillar_TurnOn_2"
+        },
+        {
+          "$type": "AttachToGadgetStateMixin",
+          "modifierName": "FallAttackPillar_TurnOff"
+        },
+        {
+          "$type": "AttachToAnimatorStateIDMixin",
+          "stateIDs": ["KeepRiseGold"],
+          "modifierName": "FallAttackPillar_ActiveEffect_2"
+        },
+        {
+          "$type": "AttachToAnimatorStateIDMixin",
+          "stateIDs": ["KeepRiseNormal"],
+          "modifierName": "FallAttackPillar_ActiveEffect_1"
+        }
+      ],
+      "abilitySpecials": {
+        "FallAttackPillar_MaxHP": 2.0,
+        "FallAttackPillar_HitCount": 0.0
+      },
+      "modifiers": {
+        "Blank": {
+          "modifierName": "",
+          "bonusCriticalHurt": 100.0
+        },
+        "FallAttackPillar_HP3": {
+          "modifierName": "",
+          "bonusCriticalHurt": 100.0,
+          "onAdded": [
+            {
+              "$type": "EnableSceneTransformByName",
+              "transformNames": ["HP_3"],
+              "setEnable": true
+            },
+            {
+              "$type": "EnableSceneTransformByName",
+              "transformNames": ["HP_2", "HP_1"]
+            }
+          ]
+        },
+        "FallAttackPillar_HP2": {
+          "modifierName": "",
+          "bonusCriticalHurt": 100.0,
+          "onAdded": [
+            {
+              "$type": "EnableSceneTransformByName",
+              "transformNames": ["HP_2"],
+              "setEnable": true
+            },
+            {
+              "$type": "EnableSceneTransformByName",
+              "transformNames": ["HP_3", "HP_1"]
+            }
+          ]
+        },
+        "FallAttackPillar_HP1": {
+          "modifierName": "",
+          "bonusCriticalHurt": 100.0,
+          "onAdded": [
+            {
+              "$type": "EnableSceneTransformByName",
+              "transformNames": ["HP_1"],
+              "setEnable": true
+            },
+            {
+              "$type": "EnableSceneTransformByName",
+              "transformNames": ["HP_2", "HP_3"]
+            }
+          ]
+        },
+        "FallAttackPillar_TurnOn_1": {
+          "modifierName": "",
+          "bonusCriticalHurt": 100.0,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "ratio": 3.0,
+              "key": "FallAttackPillar_State",
+              "maxValue": 0.0,
+              "minValue": 0.0
+            },
+            {
+              "$type": "SetGlobalValueToOverrideMap",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "SGV_FallAttackPillar_MaxHP",
+                  "ratio": 0.0,
+                  "compareType": "MoreThan"
+                }
+              ],
+              "globalValueKey": "SGV_FallAttackPillar_MaxHP",
+              "overrideMapKey": "FallAttackPillar_MaxHP"
+            },
+            {
+              "$type": "SetGlobalValue",
+              "ratio": "FallAttackPillar_MaxHP",
+              "key": "FallAttackPillar_Counter",
+              "maxValue": 0.0,
+              "minValue": 0.0
+            },
+            {
+              "$type": "EnableSceneTransformByName",
+              "transformNames": ["Normal_1", "Normal_2", "Normal_3"],
+              "setEnable": true
+            },
+            {
+              "$type": "EnableSceneTransformByName",
+              "transformNames": ["Gold_1", "Gold_2", "Gold_3"]
+            }
+          ]
+        },
+        "FallAttackPillar_TurnOn_2": {
+          "modifierName": "",
+          "bonusCriticalHurt": 100.0,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "ratio": 3.0,
+              "key": "FallAttackPillar_State",
+              "maxValue": 0.0,
+              "minValue": 0.0
+            },
+            {
+              "$type": "SetGlobalValueToOverrideMap",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "SGV_FallAttackPillar_MaxHP",
+                  "ratio": 0.0,
+                  "compareType": "MoreThan"
+                }
+              ],
+              "globalValueKey": "SGV_FallAttackPillar_MaxHP",
+              "overrideMapKey": "FallAttackPillar_MaxHP"
+            },
+            {
+              "$type": "SetGlobalValue",
+              "ratio": "FallAttackPillar_MaxHP",
+              "key": "FallAttackPillar_Counter",
+              "maxValue": 0.0,
+              "minValue": 0.0
+            },
+            {
+              "$type": "EnableSceneTransformByName",
+              "transformNames": ["Normal_1", "Normal_2", "Normal_3"]
+            },
+            {
+              "$type": "EnableSceneTransformByName",
+              "transformNames": ["Gold_1", "Gold_2", "Gold_3"],
+              "setEnable": true
+            }
+          ]
+        },
+        "FallAttackPillar_TurnOff": {
+          "modifierName": "",
+          "bonusCriticalHurt": 100.0,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "ratio": 0.0,
+              "key": "FallAttackPillar_Counter",
+              "maxValue": 0.0,
+              "minValue": 0.0
+            }
+          ]
+        },
+        "FallAttackPillar_MuteHit": {
+          "modifierName": "",
+          "duration": 0.10000000149011612,
+          "bonusCriticalHurt": 100.0,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "ratio": 1.0,
+              "key": "FallAttackPillar_MuteHit",
+              "maxValue": 0.0,
+              "minValue": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValue",
+              "ratio": 0.0,
+              "key": "FallAttackPillar_MuteHit",
+              "maxValue": 0.0,
+              "minValue": 0.0
+            }
+          ]
+        },
+        "FallAttackPillar_Off": {
+          "modifierName": "",
+          "bonusCriticalHurt": 100.0,
+          "onAdded": [
+            {
+              "$type": "ExecuteGadgetLua"
+            },
+            {
+              "$type": "FireEffect",
+              "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RisingFloor_Down",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "attachPointName": "EffectNode"
+              },
+              "effectTempleteID": -1.0
+            },
+            {
+              "$type": "EnableSceneTransformByName",
+              "transformNames": ["HP_1", "HP_2", "HP_3"]
+            },
+            {
+              "$type": "SetGlobalValue",
+              "ratio": -1.0,
+              "key": "FallAttackPillar_State",
+              "maxValue": 0.0,
+              "minValue": 0.0
+            }
+          ]
+        },
+        "FallAttackPillar_ActiveEffect_1": {
+          "modifierName": "",
+          "duration": 1.0,
+          "bonusCriticalHurt": 100.0,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RisingFloor_Light_01",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "attachPointName": "EffectNode"
+              },
+              "effectTempleteID": -1.0
+            }
+          ]
+        },
+        "FallAttackPillar_ActiveEffect_2": {
+          "modifierName": "",
+          "duration": 1.0,
+          "bonusCriticalHurt": 100.0,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RisingFloor_Light_02",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "attachPointName": "EffectNode"
+              },
+              "effectTempleteID": -1.0
+            }
+          ]
+        },
+        "FallAttackPillar_On": {
+          "modifierName": "",
+          "bonusCriticalHurt": 100.0,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RisingFloor_Up",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "attachPointName": "EffectNode"
+              },
+              "effectTempleteID": -1.0
+            }
+          ],
+          "onBeingHit": [
+            {
+              "$type": "Predicated",
+              "targetPredicates": [
+                {
+                  "$type": "LCCMCDGDKGI",
+                  "attackTags": ["FallingAttack"]
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Self",
+                  "key": "FallAttackPillar_MuteHit",
+                  "ratio": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "FireEffect",
+                  "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_RisingFloor_Hit_01",
+                  "born": {
+                    "$type": "ConfigBornByAttachPoint",
+                    "attachPointName": "EffectNode"
+                  },
+                  "effectTempleteID": -1.0
+                },
+                {
+                  "$type": "ApplyModifier",
+                  "modifierName": "FallAttackPillar_MuteHit"
+                },
+                {
+                  "$type": "SetGlobalValue",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Self",
+                      "key": "FallAttackPillar_Counter",
+                      "ratio": 3.0,
+                      "compareType": "LessAndEqual"
+                    },
+                    {
+                      "$type": "DDBJEPBNOGF",
+                      "predicates": [
+                        {
+                          "$type": "ByTargetGlobalValue",
+                          "target": "Self",
+                          "key": "FallAttackPillar_State",
+                          "ratio": 3.0,
+                          "compareType": "MoreThanAndEqual"
+                        }
+                      ]
+                    }
+                  ],
+                  "ratio": 1.0,
+                  "key": "FallAttackPillar_State",
+                  "maxValue": 0.0,
+                  "minValue": 0.0
+                },
+                {
+                  "$type": "SetGlobalValue",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Self",
+                      "key": "FallAttackPillar_State",
+                      "ratio": 3.0,
+                      "compareType": "MoreThanAndEqual"
+                    }
+                  ],
+                  "ratio": 2.0,
+                  "key": "FallAttackPillar_State",
+                  "maxValue": 0.0,
+                  "minValue": 0.0
+                },
+                {
+                  "$type": "ServerLuaCall",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Self",
+                      "key": "FallAttackPillar_Counter",
+                      "ratio": 1.0,
+                      "compareType": "LessAndEqual"
+                    }
+                  ],
+                  "luaCallType": "FromGroup",
+                  "funcName": "SLC_CharAmusePillar_TryCreatReward",
+                  "MPPMFEDKGHC": 0.0,
+                  "BOKNHLDBKKK": 0.0,
+                  "CHOIIMHDNHK": 0.0
+                },
+                {
+                  "$type": "AddGlobalValue",
+                  "ratio": -1.0,
+                  "key": "FallAttackPillar_Counter",
+                  "useLimitRange": true,
+                  "maxValue": 99.0,
+                  "minValue": 0.0
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 0.0,
+          "key": "FallAttackPillar_Counter",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        },
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 3.0,
+          "key": "FallAttackPillar_State",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "SceneObj_Area_Common_Property_Prop_CharAmusementCam_01",
+      "onAdded": [
+        {
+          "$type": "EnableGadgetSpecialCamera",
+          "canBeHandledOnRecover": true,
+          "enable": true
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "SceneObj_Area_Common_Property_Prop_CharAmusementCam_02",
+      "abilityMixins": [
+        {
+          "$type": "DisableCineMachineMixin"
+        }
+      ],
+      "onAdded": [
+        {
+          "$type": "EnableGadgetSpecialCamera",
+          "canBeHandledOnRecover": true,
+          "enable": true
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "SceneObj_Area_Common_Property_Prop_SlimeGate_01",
+      "abilityMixins": [
+        {
+          "$type": "AttachToGadgetStateMixin",
+          "gadgetState": 201,
+          "modifierName": "SlimeGate_Eff_1"
+        },
+        {
+          "$type": "AttachToGadgetStateMixin",
+          "gadgetState": 202,
+          "modifierName": "SlimeGate_Eff_2"
+        }
+      ],
+      "modifiers": {
+        "SlimeGate_Eff_OnShot": {
+          "modifierName": "",
+          "bonusCriticalHurt": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "DoActionOnGlobalValueChangeMixin",
+              "globalValueKey": "SGV_CharAmuse_SlimeGateEff",
+              "actions": [
+                {
+                  "$type": "FireEffect",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Self",
+                      "key": "SlimeGate_AttachEff_State",
+                      "ratio": 1.0
+                    }
+                  ],
+                  "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_Goal_Post_01_Active",
+                  "born": {
+                    "$type": "ConfigBornByAttachPoint",
+                    "attachPointName": "EffectNode"
+                  },
+                  "effectTempleteID": -1.0
+                },
+                {
+                  "$type": "FireEffect",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "target": "Self",
+                      "key": "SlimeGate_AttachEff_State",
+                      "ratio": 2.0
+                    }
+                  ],
+                  "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_Goal_Post_02_Active",
+                  "born": {
+                    "$type": "ConfigBornByAttachPoint",
+                    "attachPointName": "EffectNode"
+                  },
+                  "effectTempleteID": -1.0
+                }
+              ]
+            }
+          ]
+        },
+        "SlimeGate_Eff_1": {
+          "modifierName": "",
+          "bonusCriticalHurt": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_Goal_Post_01_Idle",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "attachPointName": "EffectNode"
+              },
+              "effectTempleteID": -1.0
+            },
+            {
+              "$type": "SetGlobalValue",
+              "ratio": 1.0,
+              "key": "SlimeGate_AttachEff_State",
+              "maxValue": 0.0,
+              "minValue": 0.0
+            }
+          ]
+        },
+        "SlimeGate_Eff_2": {
+          "modifierName": "",
+          "bonusCriticalHurt": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_Goal_Post_02_Idle",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "attachPointName": "EffectNode"
+              },
+              "effectTempleteID": -1.0
+            },
+            {
+              "$type": "SetGlobalValue",
+              "ratio": 2.0,
+              "key": "SlimeGate_AttachEff_State",
+              "maxValue": 0.0,
+              "minValue": 0.0
+            }
+          ]
+        },
+        "UNIQUE_SlimeGate_MonsterKillSelf": {
+          "stacking": "RefreshUniqueDurability",
+          "stackingOption": {
+            "abilitySpecialName": "",
+            "enableMixedUnique": true
+          },
+          "modifierName": "",
+          "isUnique": true,
+          "bonusCriticalHurt": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "DiePatternSwitchMixin",
+              "dieForceDisappearTime": 2.0,
+              "dieDisappearEffect": "",
+              "PBDBIECLPMF": true,
+              "LGOIFHPIPJM": true
+            },
+            {
+              "$type": "ReplaceEventPatternMixin",
+              "oldPatterns": [
+                "Monster_Slime_Electric_02_Die",
+                "Monster_Slime_Electric_03_Die",
+                "Monster_Slime_Fire_Die_02",
+                "Monster_Slime_Fire_Die_03"
+              ],
+              "newPatterns": [
+                "Monster_Slime_Fire_Die_03_WithFire",
+                "Monster_Slime_Fire_Die_03_WithFire",
+                "Monster_Slime_Fire_Die_03_WithFire",
+                "Monster_Slime_Fire_Die_03_WithFire"
+              ]
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "ServerLuaCall",
+              "target": "Applier",
+              "luaCallType": "CurGalleryControlGroup",
+              "isTarget": true,
+              "funcName": "SLC_CharAmuse_SlimeGateEff",
+              "MPPMFEDKGHC": 0.0,
+              "BOKNHLDBKKK": 0.0,
+              "CHOIIMHDNHK": 0.0
+            },
+            {
+              "$type": "KillSelf"
+            },
+            {
+              "$type": "HideUIBillBoard",
+              "hide": true
+            },
+            {
+              "$type": "FireEffect",
+              "predicates": [
+                {
+                  "$type": "DDBJEPBNOGF",
+                  "predicates": [
+                    {
+                      "$type": "KDJFMOGPKCP",
+                      "CIMNBKFMPGD": "Electric"
+                    }
+                  ]
+                }
+              ],
+              "healLimitedByCasterMaxHPRatio": "Eff_Monster_Slime_Fire_Die",
+              "effectTempleteID": -1.0
+            },
+            {
+              "$type": "FireEffect",
+              "predicates": [
+                {
+                  "$type": "KDJFMOGPKCP",
+                  "CIMNBKFMPGD": "Electric"
+                }
+              ],
+              "healLimitedByCasterMaxHPRatio": "Eff_Monster_Slime_Electric_Die",
+              "effectTempleteID": -1.0
+            },
+            {
+              "$type": "TriggerSetRenderersEnable",
+              "renderNames": ["Body", "Eye_L", "Eye_R", "Horn"]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "modifierName": "SlimeGate_Eff_OnShot"
+        }
+      ],
+      "onFieldEnter": [
+        {
+          "$type": "Predicated",
+          "target": "Target",
+          "targetPredicates": [
+            {
+              "$type": "ByEntityTypes",
+              "entityTypes": ["Monster"]
+            },
+            {
+              "$type": "DDBJEPBNOGF",
+              "predicates": [
+                {
+                  "$type": "MMGNMMFNPAK",
+                  "modifierName": "UNIQUE_SlimeGate_MonsterKillSelf"
+                }
+              ]
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "ApplyModifier",
+              "target": "Target",
+              "modifierName": "UNIQUE_SlimeGate_MonsterKillSelf"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "SceneObj_Area_Common_Property_Prop_SpiningBall_01",
+      "abilityMixins": [
+        {
+          "$type": "ServerUpdateGlobalValueMixin",
+          "key": "GV_SpiningBall_Action",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        }
+      ],
+      "modifiers": {
+        "SpiningBall_Trail": {
+          "modifierName": "",
+          "bonusCriticalHurt": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_Bouncing_Ball_Moving",
+              "effectTempleteID": -1.0
+            }
+          ]
+        },
+        "SpiningBall_Action": {
+          "modifierName": "",
+          "bonusCriticalHurt": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "DoActionOnGlobalValueChangeMixin",
+              "globalValueKey": "GV_SpiningBall_Action",
+              "actions": [
+                {
+                  "$type": "SetAnimatorTrigger",
+                  "triggerID": "OnAction"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 0.0,
+          "key": "GV_SpiningBall_Action",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        },
+        {
+          "$type": "FireEffect",
+          "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_Bouncing_Ball_Create",
+          "effectTempleteID": -1.0
+        },
+        {
+          "$type": "FireEffect",
+          "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_Bouncing_Ball_Warnig",
+          "born": {
+            "$type": "ConfigBornBySelf",
+            "direction": {
+              "$type": "JADOBJDPOLJ",
+              "PPKEGDJIPMI": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              }
+            },
+            "IABNJPGBAOH": true
+          },
+          "effectTempleteID": -1.0
+        },
+        {
+          "$type": "AttachModifier",
+          "modifierName": "SpiningBall_Trail"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "SetAnimatorTrigger",
+          "triggerID": "OnAction"
+        },
+        {
+          "$type": "SetGlobalDir",
+          "target": "Target",
+          "key": "HitRotation",
+          "born": {
+            "$type": "ConfigBornBySelf",
+            "direction": {
+              "$type": "IHINHODOMIN",
+              "angleOffset": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              }
+            }
+          },
+          "setTarget": false
+        },
+        {
+          "$type": "FireEffect",
+          "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_Bouncing_Ball_Bounce",
+          "born": {
+            "$type": "ConfigBornBySelf",
+            "direction": {
+              "$type": "ConfigDirectionByGlobalValue",
+              "directionKey": "HitRotation"
+            }
+          },
+          "effectTempleteID": -1.0
+        },
+        {
+          "$type": "Predicated",
+          "target": "Target",
+          "targetPredicates": [
+            {
+              "$type": "ByEntityTypes",
+              "entityTypes": ["Avatar"]
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "DamageByAttackValue",
+              "target": "Target",
+              "attackInfo": {
+                "attackTag": "",
+                "attenuationTag": "",
+                "attenuationGroup": "default",
+                "attackProperty": {
+                  "damagePercentage": 0.0,
+                  "damagePercentageRatio": 0.0,
+                  "bonusCriticalHurt": 0.0,
+                  "strikeType": "Default",
+                  "enBreak": 800.0,
+                  "ignoreLevelDiff": true
+                },
+                "hitPattern": {
+                  "onHitEffectName": "none",
+                  "hitImpulseType": "LV8",
+                  "hitHaltTimeScale": 0.009999999776482582,
+                  "muteHitText": true
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "onKill": [
+        {
+          "$type": "RemoveModifier",
+          "RotationDampTime": true,
+          "modifierName": "SpiningBall_Trail"
+        },
+        {
+          "$type": "SetAnimatorInt",
+          "RotationDampTime": true,
+          "intID": "IsDie",
+          "ratio": 1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "SceneObj_Area_Common_Property_Prop_BaseballShooter_01",
+      "abilityMixins": [
+        {
+          "$type": "AttachToGadgetStateMixin",
+          "gadgetState": 201,
+          "modifierName": "Shoot_Normal"
+        },
+        {
+          "$type": "AttachToGadgetStateMixin",
+          "gadgetState": 202,
+          "modifierName": "Shoot_Fast"
+        }
+      ],
+      "modifiers": {
+        "Shoot_Fast": {
+          "modifierName": "",
+          "bonusCriticalHurt": 100.0,
+          "thinkInterval": 3.0,
+          "onThinkInterval": [
+            {
+              "$type": "TriggerBullet",
+              "bulletID": 70320013,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "attachPointName": "ShootPoint"
+              },
+              "lifeByOwnerIsAlive": true
+            }
+          ]
+        },
+        "Shoot_Normal": {
+          "modifierName": "",
+          "bonusCriticalHurt": 100.0,
+          "thinkInterval": 3.0,
+          "onThinkInterval": [
+            {
+              "$type": "TriggerBullet",
+              "bulletID": 70320012,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "attachPointName": "ShootPoint"
+              },
+              "lifeByOwnerIsAlive": true
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "SceneObj_Area_Common_Property_Prop_Baseball_01",
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToSelfGlobalValueNoInitMixin",
+          "globalValueKey": "SGV_BaseBall_State",
+          "valueSteps": [-0.5, 0.5, 1.5],
+          "modifierNameSteps": ["BaseBall_Normal", "BaseBall_Active"]
+        }
+      ],
+      "abilitySpecials": {
+        "lifeTime": 5.050000190734863
+      },
+      "modifiers": {
+        "BaseBall_Active": {
+          "modifierName": "",
+          "bonusCriticalHurt": 100.0,
+          "onAdded": [
+            {
+              "$type": "SetMaterialParamFloatByTransform",
+              "canBeHandledOnRecover": true,
+              "EKNGFFBIAPI": "BaseBall",
+              "IMLMHJCMAHE": "_EmissionStrength",
+              "ratio": 15.0
+            }
+          ]
+        },
+        "BaseBall_Normal": {
+          "modifierName": "",
+          "bonusCriticalHurt": 100.0,
+          "onAdded": [
+            {
+              "$type": "SetMaterialParamFloatByTransform",
+              "canBeHandledOnRecover": true,
+              "EKNGFFBIAPI": "BaseBall",
+              "IMLMHJCMAHE": "_EmissionStrength",
+              "ratio": 0.0
+            }
+          ]
+        },
+        "Baseball_Effect": {
+          "modifierName": "",
+          "duration": "lifeTime",
+          "bonusCriticalHurt": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_Baseball_02_Trail",
+              "effectTempleteID": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "ServerLuaCall",
+              "luaCallType": "FromGroup",
+              "funcName": "SLC_CharAmusement_BaseBallDie",
+              "MPPMFEDKGHC": 0.0,
+              "BOKNHLDBKKK": 0.0,
+              "CHOIIMHDNHK": 0.0
+            },
+            {
+              "$type": "SetMaterialParamFloatByTransform",
+              "EKNGFFBIAPI": "BaseBall",
+              "IMLMHJCMAHE": "_DissolveValue",
+              "ratio": 1.0,
+              "PCGOEPPLKLO": 0.75
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "modifierName": "Baseball_Effect"
+        },
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 1.0,
+          "key": "Baseball_Type",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "SceneObj_Gear_Platform_GlideDirtyBalloon_02",
+      "modifiers": {
+        "DirtyBalloon": {
+          "modifierName": "",
+          "duration": 0.20000000298023224,
+          "bonusCriticalHurt": 100.0,
+          "onAdded": [
+            {
+              "$type": "RemoveUniqueModifier",
+              "modifierName": "UNIQUE_DirtyBalloon_Long_Eff"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "ApplyModifier",
+              "modifierName": "UNIQUE_DirtyBalloon_Long_Eff"
+            }
+          ]
+        },
+        "UNIQUE_DirtyBalloon_Long_Eff": {
+          "modifierName": "",
+          "isUnique": true,
+          "duration": 5.0,
+          "bonusCriticalHurt": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "TriggerPostProcessEffectMixin",
+              "postEffectAssetName": "PostEffect_Scene_Mud",
+              "duration": 5.0
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "DungeonFogEffects",
+              "muteRemoteAction": true,
+              "enable": true,
+              "cameraFogEffectName": "Eff_SceneObj_GlideChampBalloon_03_02",
+              "playerFogEffectName": ""
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "DungeonFogEffects",
+              "cameraFogEffectName": "",
+              "playerFogEffectName": ""
+            }
+          ]
+        }
+      },
+      "onFieldEnter": [
+        {
+          "$type": "ApplyModifier",
+          "target": "Target",
+          "modifierName": "DirtyBalloon"
+        },
+        {
+          "$type": "KillSelf"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "SceneObj_Gear_Platform_GlideDirtyBalloon_03",
+      "modifiers": {
+        "DirtyBalloon": {
+          "modifierName": "",
+          "duration": 0.20000000298023224,
+          "bonusCriticalHurt": 100.0,
+          "onAdded": [
+            {
+              "$type": "RemoveUniqueModifier",
+              "modifierName": "UNIQUE_DirtyBalloon_Common_Eff"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "ApplyModifier",
+              "modifierName": "UNIQUE_DirtyBalloon_Common_Eff"
+            }
+          ]
+        },
+        "UNIQUE_DirtyBalloon_Common_Eff": {
+          "modifierName": "",
+          "isUnique": true,
+          "duration": 1.5,
+          "bonusCriticalHurt": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "TriggerPostProcessEffectMixin",
+              "postEffectAssetName": "PostEffect_Scene_Mud",
+              "duration": 1.5
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "DungeonFogEffects",
+              "muteRemoteAction": true,
+              "enable": true,
+              "cameraFogEffectName": "Eff_SceneObj_GlideChampBalloon_03_02",
+              "playerFogEffectName": ""
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "DungeonFogEffects",
+              "cameraFogEffectName": "",
+              "playerFogEffectName": ""
+            }
+          ]
+        }
+      },
+      "onFieldEnter": [
+        {
+          "$type": "ApplyModifier",
+          "target": "Target",
+          "modifierName": "DirtyBalloon"
+        },
+        {
+          "$type": "KillSelf"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "SceneObj_Area_Common_Property_Prop_Baseball_02",
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToSelfGlobalValueNoInitMixin",
+          "globalValueKey": "SGV_BaseBall_State",
+          "valueSteps": [-0.5, 0.5, 1.5],
+          "modifierNameSteps": ["BaseBall_Normal", "BaseBall_Active"]
+        }
+      ],
+      "abilitySpecials": {
+        "lifeTime": 3.5299999713897705
+      },
+      "modifiers": {
+        "BaseBall_Active": {
+          "modifierName": "",
+          "bonusCriticalHurt": 100.0,
+          "onAdded": [
+            {
+              "$type": "SetMaterialParamFloatByTransform",
+              "canBeHandledOnRecover": true,
+              "EKNGFFBIAPI": "BaseBall",
+              "IMLMHJCMAHE": "_EmissionStrength",
+              "ratio": 7.5
+            }
+          ]
+        },
+        "BaseBall_Normal": {
+          "modifierName": "",
+          "bonusCriticalHurt": 100.0,
+          "onAdded": [
+            {
+              "$type": "SetMaterialParamFloatByTransform",
+              "canBeHandledOnRecover": true,
+              "EKNGFFBIAPI": "BaseBall",
+              "IMLMHJCMAHE": "_EmissionStrength",
+              "ratio": 4.0
+            }
+          ]
+        },
+        "Baseball_Effect": {
+          "modifierName": "",
+          "duration": "lifeTime",
+          "bonusCriticalHurt": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_Baseball_01_Trail",
+              "effectTempleteID": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "ServerLuaCall",
+              "luaCallType": "FromGroup",
+              "funcName": "SLC_CharAmusement_BaseBallDie",
+              "MPPMFEDKGHC": 0.0,
+              "BOKNHLDBKKK": 0.0,
+              "CHOIIMHDNHK": 0.0
+            },
+            {
+              "$type": "SetMaterialParamFloatByTransform",
+              "EKNGFFBIAPI": "BaseBall",
+              "IMLMHJCMAHE": "_DissolveValue",
+              "ratio": 2.0,
+              "PCGOEPPLKLO": 0.75
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "modifierName": "Baseball_Effect"
+        },
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 2.0,
+          "key": "Baseball_Type",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "SceneObj_Gear_Common_Property_Prop_CharAmusementStamina_01",
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToSelfGlobalValueNoInitMixin",
+          "globalValueKey": "CharAmusement_Stamina",
+          "valueSteps": [-1.5, 0.5, 1.5],
+          "modifierNameSteps": [
+            "CharAmusementStamina_Off",
+            "CharAmusementStamina_On"
+          ]
+        }
+      ],
+      "modifiers": {
+        "CharAmusementStamina_On": {
+          "modifierName": "",
+          "bonusCriticalHurt": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_FleurStamina_Float",
+              "effectTempleteID": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FireEffect",
+              "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_FleurStamina_Smash",
+              "effectTempleteID": -1.0
+            }
+          ]
+        },
+        "CharAmusementStamina_Off": {
+          "modifierName": "",
+          "bonusCriticalHurt": 100.0,
+          "onAdded": [
+            {
+              "$type": "ApplyModifier",
+              "modifierName": "CharAmusementStamina_Recover"
+            }
+          ]
+        },
+        "CharAmusementStamina_Recover": {
+          "modifierName": "",
+          "duration": 1.5,
+          "bonusCriticalHurt": 100.0,
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValue",
+              "ratio": 1.0,
+              "key": "CharAmusement_Stamina",
+              "maxValue": 0.0,
+              "minValue": 0.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 1.0,
+          "key": "CharAmusement_Stamina",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "SceneObj_Level_Common_Property_Ani_Prop_Undying_Torch_01",
+      "abilityMixins": [
+        {
+          "$type": "AttachToGadgetStateMixin",
+          "modifierName": "Undying_Torch_Off"
+        },
+        {
+          "$type": "AttachToGadgetStateMixin",
+          "gadgetState": 201,
+          "modifierName": "Undying_Torch_On"
+        }
+      ],
+      "modifiers": {
+        "Undying_Torch_Off": {
+          "modifierName": "",
+          "bonusCriticalHurt": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachModifier",
+              "modifierName": "Undying_Torch_Timer"
+            }
+          ],
+          "onBeingHit": [
+            {
+              "$type": "ExecuteGadgetLua",
+              "predicates": [
+                {
+                  "$type": "OIEGBANNLOG",
+                  "CIMNBKFMPGD": "Fire"
+                },
+                {
+                  "$type": "DDBJEPBNOGF",
+                  "predicates": [
+                    {
+                      "$type": "KDJFMOGPKCP",
+                      "CIMNBKFMPGD": "Water"
+                    }
+                  ]
+                }
+              ],
+              "param1": 201
+            }
+          ]
+        },
+        "Undying_Torch_Timer": {
+          "modifierName": "",
+          "duration": 1.0,
+          "bonusCriticalHurt": 100.0,
+          "onRemoved": [
+            {
+              "$type": "ExecuteGadgetLua",
+              "param1": 201
+            }
+          ]
+        },
+        "Undying_Torch_ElementHolder": {
+          "modifierName": "",
+          "elementType": "Fire",
+          "bonusCriticalHurt": 25.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_ImmortalFire_01_Fire",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.23999999463558197,
+                  "z": 0.0
+                },
+                "attachPointName": "attachPoint"
+              },
+              "effectTempleteID": -1.0
+            }
+          ]
+        },
+        "Undying_Torch_On": {
+          "modifierName": "",
+          "bonusCriticalHurt": 100.0,
+          "thinkInterval": 0.20000000298023224,
+          "onThinkInterval": [
+            {
+              "$type": "AttachModifier",
+              "modifierName": "Undying_Torch_ElementHolder"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "SceneObj_Area_Common_Property_Prop_SlimeMovingWall_01",
+      "modifiers": {
+        "SlimeMovingWall_Attacking": {
+          "modifierName": "",
+          "bonusCriticalHurt": 100.0,
+          "thinkInterval": 0.20000000298023224,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_Moving_Wall_01_Trail",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "attachPointName": "EffectNode"
+              },
+              "effectTempleteID": -1.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "TriggerAttackEvent",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackBox",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": -0.550000011920929
+                    }
+                  },
+                  "size": {
+                    "x": 2.5,
+                    "y": 2.5,
+                    "z": 1.2999999523162842
+                  }
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "damagePercentage": 0.0,
+                    "damagePercentageRatio": 0.0,
+                    "bonusCriticalHurt": 0.0,
+                    "strikeType": "Default",
+                    "enBreak": 800.0,
+                    "ignoreLevelDiff": true
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "none",
+                    "hitImpulseType": "",
+                    "overrideHitImpulse": {
+                      "hitLevel": "Air",
+                      "hitImpulseX": 320.0,
+                      "hitImpulseY": 200.0
+                    },
+                    "hitHaltTimeScale": 0.009999999776482582,
+                    "muteHitText": true
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "modifierName": "SlimeMovingWall_Attacking"
+        },
+        {
+          "$type": "FireEffect",
+          "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_Moving_Wall_01_Born",
+          "born": {
+            "$type": "ConfigBornByAttachPoint",
+            "attachPointName": "EffectNode"
+          },
+          "effectTempleteID": -1.0
+        },
+        {
+          "$type": "SetMaterialParamFloatByTransform",
+          "EKNGFFBIAPI": "Dither",
+          "IMLMHJCMAHE": "_DitherAlpha",
+          "ratio": 0.0
+        },
+        {
+          "$type": "SetMaterialParamFloatByTransform",
+          "EKNGFFBIAPI": "Dither",
+          "IMLMHJCMAHE": "_DitherAlpha",
+          "ratio": 1.0,
+          "KNEMMEIDOHF": true,
+          "PCGOEPPLKLO": 0.75
+        }
+      ],
+      "onKill": [
+        {
+          "$type": "RemoveModifier",
+          "RotationDampTime": true,
+          "modifierName": "SlimeMovingWall_Attacking"
+        },
+        {
+          "$type": "SetMaterialParamFloatByTransform",
+          "RotationDampTime": true,
+          "EKNGFFBIAPI": "Dither",
+          "IMLMHJCMAHE": "_DitherAlpha",
+          "ratio": 0.0,
+          "KNEMMEIDOHF": true,
+          "PCGOEPPLKLO": 0.75
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "SceneObj_Gear_Common_Property_Prop_CharAmusementExpandAccess_01",
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToSelfGlobalValueNoInitMixin",
+          "globalValueKey": "CharAmusement_ExpandAccess",
+          "valueSteps": [-1.5, 0.5, 1.5],
+          "modifierNameSteps": ["Mute", "Interactable"]
+        }
+      ],
+      "modifiers": {
+        "UNIQUE_CharAmusement_PickRangeBuff": {
+          "stacking": "RefreshUniqueDurability",
+          "modifierName": "",
+          "isUnique": true,
+          "duration": 20.0,
+          "bonusCriticalHurt": 100.0,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "target": "Team",
+              "ratio": 1.0,
+              "key": "GV_CoinRangeLevel",
+              "useLimitRange": true,
+              "maxValue": 1.0,
+              "minValue": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValue",
+              "target": "Team",
+              "ratio": 0.0,
+              "key": "GV_CoinRangeLevel",
+              "useLimitRange": true,
+              "maxValue": 1.0,
+              "minValue": 0.0
+            }
+          ]
+        },
+        "Interactable": {
+          "modifierName": "",
+          "bonusCriticalHurt": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_ExpandAccessCoin_01",
+              "effectTempleteID": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FireEffect",
+              "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_ExpandAccessCoin_01_Dis",
+              "effectTempleteID": -1.0
+            }
+          ]
+        },
+        "Mute": {
+          "modifierName": "",
+          "duration": 1.0,
+          "bonusCriticalHurt": 100.0,
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValue",
+              "ratio": 1.0,
+              "key": "CharAmusement_ExpandAccess",
+              "maxValue": 0.0,
+              "minValue": 0.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 1.0,
+          "key": "CharAmusement_ExpandAccess",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        }
+      ],
+      "onFieldEnter": [
+        {
+          "$type": "Predicated",
+          "target": "Target",
+          "targetPredicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "target": "Self",
+              "key": "CharAmusement_ExpandAccess",
+              "ratio": 1.0
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "ApplyModifier",
+              "target": "TargetTeam",
+              "modifierName": "UNIQUE_CharAmusement_PickRangeBuff"
+            },
+            {
+              "$type": "SetGlobalValue",
+              "ratio": 0.0,
+              "key": "CharAmusement_ExpandAccess",
+              "maxValue": 0.0,
+              "minValue": 0.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "SceneObj_Gear_Common_Property_Prop_JumpUp_02",
+      "abilityMixins": [
+        {
+          "$type": "AttachModifierToSelfGlobalValueNoInitMixin",
+          "globalValueKey": "CharAmusement_JumpUp",
+          "valueSteps": [-1.5, 0.5, 1.5],
+          "modifierNameSteps": ["Mute", "Interactable"]
+        }
+      ],
+      "modifiers": {
+        "UNIQUE_JumpUpuff": {
+          "stacking": "RefreshUniqueDurability",
+          "modifierName": "",
+          "isUnique": true,
+          "duration": 10.0,
+          "bonusCriticalHurt": 100.0,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "target": "Team",
+              "ratio": 1.0,
+              "key": "GV_JumpUpBuff",
+              "useLimitRange": true,
+              "maxValue": 1.0,
+              "minValue": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValue",
+              "target": "Team",
+              "ratio": 0.0,
+              "key": "GV_JumpUpBuff",
+              "useLimitRange": true,
+              "maxValue": 1.0,
+              "minValue": 0.0
+            }
+          ]
+        },
+        "Interactable": {
+          "modifierName": "",
+          "bonusCriticalHurt": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_JumpUp_01",
+              "effectTempleteID": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FireEffect",
+              "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_JumpUp_01_Dis",
+              "effectTempleteID": -1.0
+            }
+          ]
+        },
+        "Mute": {
+          "modifierName": "",
+          "duration": 1.0,
+          "bonusCriticalHurt": 100.0,
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValue",
+              "ratio": 1.0,
+              "key": "CharAmusement_JumpUp",
+              "maxValue": 0.0,
+              "minValue": 0.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "SetGlobalValue",
+          "ratio": 1.0,
+          "key": "CharAmusement_JumpUp",
+          "maxValue": 0.0,
+          "minValue": 0.0
+        }
+      ],
+      "onFieldEnter": [
+        {
+          "$type": "Predicated",
+          "target": "Target",
+          "targetPredicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "target": "Self",
+              "key": "CharAmusement_JumpUp",
+              "ratio": 1.0
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "ApplyModifier",
+              "target": "TargetTeam",
+              "modifierName": "UNIQUE_JumpUpuff"
+            },
+            {
+              "$type": "SetGlobalValue",
+              "ratio": 0.0,
+              "key": "CharAmusement_JumpUp",
+              "maxValue": 0.0,
+              "minValue": 0.0
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

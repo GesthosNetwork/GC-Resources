@@ -1,0 +1,170 @@
+{
+  "SceneObj_Area_Common_Property_Prop_EmptyFloraShelve_01": {
+    "$type": "ConfigGadget",
+    "hasModel": true,
+    "combat": {
+      "property": {
+        "HP": 99999.0,
+        "isLockHP": true,
+        "MKJAALCBCHG": true
+      }
+    },
+    "attackAttenuation": "",
+    "HDMNJBJPNHP": {
+      "HMPMMCCGOLJ": "UI/open_custom_gadget_page",
+      "LKBDFMKIHMA": "UI_HOMEWORLD_CUSTOM_BUTTON",
+      "icon": "",
+      "MJAFOAGMHDM": "",
+      "ACGIMEJFHFP": "",
+      "LDEAEFGKKGP": "",
+      "BFILJOAHEHD": false
+    },
+    "misc": {
+      "CHHEDGCCNLB": {
+        "MFCJDAGCJLH": {
+          "NDBKNEPKACH": 1.7000000476837158
+        },
+        "slotMap": {
+          "FlowerShelf": {
+            "MPPNPLBHECP": "FlowerShelf",
+            "HAJEADDPLME": 1000
+          }
+        }
+      },
+      "GKCEMAKIKPH": ""
+    },
+    "IPBFOKBDDOD": {
+      "OIOPJCJBCFH": 3.0
+    }
+  },
+  "SceneObj_Area_Common_Property_Prop_SnowmanBody_01": {
+    "$type": "ConfigGadget",
+    "hasModel": true,
+    "combat": {
+      "property": {
+        "HP": 99999.0,
+        "isLockHP": true,
+        "MKJAALCBCHG": true
+      }
+    },
+    "attackAttenuation": "",
+    "HDMNJBJPNHP": {
+      "HMPMMCCGOLJ": "UI/open_custom_gadget_page",
+      "LKBDFMKIHMA": "UI_HOMEWORLD_CUSTOM_SNOWMANBUTTON",
+      "icon": "",
+      "MJAFOAGMHDM": "",
+      "ACGIMEJFHFP": "",
+      "LDEAEFGKKGP": "",
+      "BFILJOAHEHD": false
+    },
+    "misc": {
+      "CHHEDGCCNLB": {
+        "MFCJDAGCJLH": {
+          "NDBKNEPKACH": 1.7000000476837158
+        },
+        "slotMap": {
+          "Head": {
+            "MPPNPLBHECP": "Head",
+            "HAJEADDPLME": 11
+          },
+          "Hand": {
+            "MPPNPLBHECP": "Hand",
+            "HAJEADDPLME": 12
+          }
+        }
+      },
+      "GKCEMAKIKPH": ""
+    },
+    "IPBFOKBDDOD": {
+      "OIOPJCJBCFH": 3.0
+    }
+  },
+  "SceneObj_Area_Dq_Property_Prop_Irodori_Miniascape_01": {
+    "$type": "ConfigGadget",
+    "hasModel": true,
+    "combat": {
+      "property": {
+        "HP": 99999.0,
+        "isLockHP": true,
+        "MKJAALCBCHG": true
+      }
+    },
+    "attackAttenuation": "",
+    "HDMNJBJPNHP": {
+      "HMPMMCCGOLJ": "UI/open_custom_gadget_page",
+      "LKBDFMKIHMA": "UI_HOMEWORLD_CUSTOM_MINIASCAPE",
+      "icon": "",
+      "MJAFOAGMHDM": "",
+      "ACGIMEJFHFP": "",
+      "LDEAEFGKKGP": "",
+      "BFILJOAHEHD": false
+    },
+    "misc": {
+      "CHHEDGCCNLB": {
+        "MFCJDAGCJLH": {
+          "NDBKNEPKACH": 0.800000011920929
+        },
+        "slotMap": {
+          "FrontScene": {
+            "MPPNPLBHECP": "FrontScene",
+            "HAJEADDPLME": 21
+          },
+          "BehindScene": {
+            "MPPNPLBHECP": "BehindScene",
+            "HAJEADDPLME": 22
+          }
+        }
+      },
+      "GKCEMAKIKPH": ""
+    },
+    "IPBFOKBDDOD": {
+      "PMDLGGFEKPF": 1.2000000476837158,
+      "OIOPJCJBCFH": 3.0
+    }
+  },
+  "SceneObj_Area_Xm_Property_Prop_WoodAranaraStage_Slot_01": {
+    "$type": "ConfigGadget",
+    "hasModel": true,
+    "combat": {
+      "property": {
+        "HP": 99999.0,
+        "isLockHP": true,
+        "MKJAALCBCHG": true
+      }
+    },
+    "attackAttenuation": "",
+    "abilities": [
+      {
+        "abilityID": "SceneObj_Area_Xm_Property_Prop_WoodAranaraStage_Slot_01",
+        "abilityName": "SceneObj_Area_Xm_Property_Prop_WoodAranaraStage_Slot_01",
+        "abilityOverride": ""
+      }
+    ],
+    "HDMNJBJPNHP": {
+      "HMPMMCCGOLJ": "UI/open_custom_gadget_page",
+      "LKBDFMKIHMA": "",
+      "CJHECJJBMJA": ["HOST"],
+      "icon": "",
+      "MJAFOAGMHDM": "",
+      "ACGIMEJFHFP": "",
+      "LDEAEFGKKGP": "",
+      "BFILJOAHEHD": false
+    },
+    "misc": {
+      "CHHEDGCCNLB": {
+        "MFCJDAGCJLH": {},
+        "slotMap": {
+          "Body": {
+            "MPPNPLBHECP": "Body",
+            "HAJEADDPLME": 1001
+          }
+        }
+      },
+      "GKCEMAKIKPH": ""
+    },
+    "IPBFOKBDDOD": {
+      "PMDLGGFEKPF": 1.5,
+      "OIOPJCJBCFH": 3.0
+    }
+  }
+}
