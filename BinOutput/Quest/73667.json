@@ -1,0 +1,40 @@
+{
+  "id": 73667,
+  "type": "WQ",
+  "titleTextMapHash": 33934039,
+  "descTextMapHash": 3722312438,
+  "luaPath": "Actor/Quest/WQ73667",
+  "subQuests": [
+    {
+      "subId": 7366701,
+      "mainId": 73667,
+      "order": 1,
+      "descTextMapHash": 1436247292,
+      "acceptCondComb": "LOGIC_NONE",
+      "finishCondComb": "LOGIC_NONE",
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_CITY_REPUTATION_REQUEST"
+        }
+      ],
+      "finishCond": [
+        {
+          "type": "QUEST_CONTENT_LUA_NOTIFY",
+          "paramString": "133304194",
+          "count": 1
+        }
+      ],
+      "failCond": [],
+      "beginExec": [],
+      "finishExec": [],
+      "failExec": [],
+      "guide": {
+        "type": "QUEST_GUIDE_LOCATION",
+        "param": ["Q7366701", "30"],
+        "guideScene": 3,
+        "guideStyle": "QUEST_GUIDE_STYLE_TARGET",
+        "guideLayer": "QUEST_GUIDE_LAYER_SCENE"
+      }
+    }
+  ]
+}

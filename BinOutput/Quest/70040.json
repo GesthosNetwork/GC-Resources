@@ -1,0 +1,40 @@
+{
+  "id": 70040,
+  "type": "WQ",
+  "titleTextMapHash": 2178385903,
+  "descTextMapHash": 3896453774,
+  "luaPath": "",
+  "showType": "QUEST_HIDDEN",
+  "subQuests": [
+    {
+      "subId": 7004001,
+      "mainId": 70040,
+      "order": 1,
+      "descTextMapHash": 418896980,
+      "acceptCondComb": "LOGIC_NONE",
+      "finishCondComb": "LOGIC_NONE",
+      "failParentShow": "QUEST_HIDDEN",
+      "acceptCond": [
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [39604, 3]
+        },
+        {
+          "type": "QUEST_COND_STATE_EQUAL",
+          "param": [1020204, 3]
+        }
+      ],
+      "finishCond": [
+        {
+          "type": "QUEST_CONTENT_GAME_TIME_TICK",
+          "paramString": "0,24"
+        }
+      ],
+      "failCond": [],
+      "beginExec": [],
+      "finishExec": [],
+      "failExec": [],
+      "guide": {}
+    }
+  ]
+}
