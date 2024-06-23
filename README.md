@@ -107,5 +107,3 @@ Explore the different versions of GC resources, categorized for your convenience
 - **[4.7](https://github.com/GesthosNetwork/GC-Resources/tree/4.7)**: Final version before next major release.
 
 ---
-
-This detailed layout not only provides information but also showcases a structured, professional approach, utilizing advanced markdown features such as tables of contents, detailed version highlights, and segmenting content into clear, informative sections.
