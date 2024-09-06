@@ -17,5 +17,6 @@
 - 📁 [Resources 4.5](https://github.com/GesthosNetwork/GC-Resources/tree/4.5)
 - 📁 [Resources 4.6](https://github.com/GesthosNetwork/GC-Resources/tree/4.6)
 - 📁 [Resources 4.7](https://github.com/GesthosNetwork/GC-Resources/tree/4.7)
+- 📁 [Resources 5.0](https://github.com/GesthosNetwork/GC-Resources/tree/5.0)
 
 ---
